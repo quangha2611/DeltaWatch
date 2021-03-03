@@ -1,0 +1,50 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+
+@keyframes animation3d{
+  0%{transform:perspective(200px) rotate3d(0, 1, 0, -90deg) translateX(-100%)}
+  100%{transform:perspective(200px) rotate3d(0, 1, 0, 0deg) translateX(0px)}
+}
+
+.mask {
+  background-color: rgba(0,0,0,0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+@import '../components/notification-sale';
+@import '../blocks/header';
+@import '../blocks/nav-bar';
+
+@import '../components/banner';
+@import "../components/pages/best_brands";
+@import "../components/pages/best_equipments";
+@import "../components/pages/new_products";
+@import "../components/pages/posts";
+@import "../components/pages/products_by_brand";
+@import "../components/pages/products_for_man";
+@import "../components/pages/products_for_woman";
+
+@media only screen and (max-width: 425px) {
+  .content {
+    padding: 0 1.5rem;
+  }
+}
+
+@import '../blocks/footer';
+@import '../components/copyright';
+@import '../components/back-to-top';
+@import '../components/modal';
