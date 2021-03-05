@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', '')
+@section('title', 'Thế giới Smart Watch')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/pages/index.css') }}">
