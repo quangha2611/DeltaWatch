@@ -23,6 +23,18 @@ build_js = [
         from: 'resources/js/pages/product.js',
         to: 'public/js/pages'
     },
+    {
+        from: 'resources/js/pages/news.js',
+        to: 'public/js/pages'
+    },
+    {
+        from: 'resources/js/pages/about_us.js',
+        to: 'public/js/pages'
+    },
+    {
+        from: 'resources/js/pages/address.js',
+        to: 'public/js/pages'
+    },
 ];
 
 build_scss = [
@@ -31,9 +43,21 @@ build_scss = [
         to: 'public/css/pages'
     },
     {
+        from: 'resources/sass/pages/news.scss',
+        to: 'public/css/pages'
+    },
+    {
         from: 'resources/sass/pages/product.scss',
         to: 'public/css/pages'
-    }
+    },
+    {
+        from: 'resources/sass/pages/about_us.scss',
+        to: 'public/css/pages'
+    },
+    {
+        from: 'resources/sass/pages/address.scss',
+        to: 'public/css/pages'
+    },
 ];
 
 build_js.map(function (file) {

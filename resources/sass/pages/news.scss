@@ -28,12 +28,10 @@ html {
 @import '../components/notification-sale';
 @import '../blocks/header';
 @import '../blocks/nav-bar';
-
-@import "../components/pages/product/sidebar";
-@import "../components/pages/product/list_products";
-
 @import "../components/breadcrumb";
-@import "../components/pagination";
+
+@import "../components/pages/news/hot_news";
+@import "../components/pages/news/list_news";
 
 @import '../blocks/footer';
 @import '../components/copyright';

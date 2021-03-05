@@ -28,12 +28,15 @@ html {
 @import '../components/notification-sale';
 @import '../blocks/header';
 @import '../blocks/nav-bar';
-
-@import "../components/pages/product/sidebar";
-@import "../components/pages/product/list_products";
-
 @import "../components/breadcrumb";
-@import "../components/pagination";
+
+.content {
+  iframe {
+    width: 100%;
+  }
+}
+
+@import "../components/pages/address/form";
 
 @import '../blocks/footer';
 @import '../components/copyright';

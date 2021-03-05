@@ -1,0 +1,75 @@
+.input-your-info {
+  background-color: #fff;
+  padding: 6rem 5rem;
+  margin-top: -10%;
+  position: relative;
+  border-radius: 15px;
+
+  h4 {
+    font-family: "Arial";
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 2rem;
+  }
+
+  div.row {
+    margin-bottom: 1.5rem;
+  }
+
+  input {
+    height: 3rem;
+    padding-left: 1rem;
+    color: #000;
+    background-color: #ebebeb;
+  }
+
+  textarea {
+    background-color: #ebebeb;
+    resize: none;
+    color: black;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #000;
+  }
+
+  button {
+    padding: 0.5rem 2rem;
+    background-color: #34b1e2;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Arial";
+    border: 1px solid #34b1e2;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #fff;
+      color: #34b1e2;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    .input-your-info {
+      padding: 2rem 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .content {
+    .input-your-info {
+      div.row {
+        margin-bottom: 0;
+
+        div.col-12 {
+          margin-top: 0!important;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+}

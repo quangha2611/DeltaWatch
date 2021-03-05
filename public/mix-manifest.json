@@ -2,7 +2,13 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/pages/index.css": "/css/pages/index.css",
+    "/css/pages/news.css": "/css/pages/news.css",
     "/css/pages/product.css": "/css/pages/product.css",
+    "/css/pages/about_us.css": "/css/pages/about_us.css",
+    "/css/pages/address.css": "/css/pages/address.css",
+    "/js/pages/about_us.js": "/js/pages/about_us.js",
+    "/js/pages/address.js": "/js/pages/address.js",
     "/js/pages/index.js": "/js/pages/index.js",
+    "/js/pages/news.js": "/js/pages/news.js",
     "/js/pages/product.js": "/js/pages/product.js"
 }
