@@ -20,9 +20,6 @@
                                         <div class="item_image_mask">
                                             <div class="animation3d">
                                                 <div>
-                                                    <i class="fas fa-search-plus"></i>
-                                                </div>
-                                                <div>
                                                     <i class="fas fa-shopping-basket iconcart"></i>
                                                 </div>
                                             </div>
