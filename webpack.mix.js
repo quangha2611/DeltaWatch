@@ -24,6 +24,10 @@ build_js = [
         to: 'public/js/pages'
     },
     {
+        from: "resources/js/pages/product_detail.js",
+        to: "public/js/pages",
+    },
+    {
         from: 'resources/js/pages/news.js',
         to: 'public/js/pages'
     },
@@ -49,6 +53,10 @@ build_scss = [
     {
         from: 'resources/sass/pages/product.scss',
         to: 'public/css/pages'
+    },
+    {
+        from: "resources/sass/pages/product_detail.scss",
+        to: "public/css/pages",
     },
     {
         from: 'resources/sass/pages/about_us.scss',
