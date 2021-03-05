@@ -16,24 +16,32 @@ mix.js('resources/js/app.js', 'public/js')
 
 build_js = [
     {
-        from: 'resources/js/pages/index.js',
-        to: 'public/js/pages'
+        from: "resources/js/pages/index.js",
+        to: "public/js/pages",
     },
     {
-        from: 'resources/js/pages/product.js',
-        to: 'public/js/pages'
+        from: "resources/js/pages/product.js",
+        to: "public/js/pages",
+    },
+    {
+        from: "resources/js/pages/product_detail.js",
+        to: "public/js/pages",
     },
 ];
 
 build_scss = [
     {
-        from: 'resources/sass/pages/index.scss',
-        to: 'public/css/pages'
+        from: "resources/sass/pages/index.scss",
+        to: "public/css/pages",
     },
     {
-        from: 'resources/sass/pages/product.scss',
-        to: 'public/css/pages'
-    }
+        from: "resources/sass/pages/product.scss",
+        to: "public/css/pages",
+    },
+    {
+        from: "resources/sass/pages/product_detail.scss",
+        to: "public/css/pages",
+    },
 ];
 
 build_js.map(function (file) {
