@@ -30,13 +30,13 @@ html {
 @import '../blocks/nav-bar';
 
 @import '../components/banner';
-@import "../components/pages/best_brands";
-@import "../components/pages/best_equipments";
-@import "../components/pages/new_products";
-@import "../components/pages/posts";
-@import "../components/pages/products_by_brand";
-@import "../components/pages/products_for_man";
-@import "../components/pages/products_for_woman";
+@import "../components/pages/index/best_brands";
+@import "../components/pages/index/best_equipments";
+@import "../components/pages/index/new_products";
+@import "../components/pages/index/posts";
+@import "../components/pages/index/products_by_brand";
+@import "../components/pages/index/products_for_man";
+@import "../components/pages/index/products_for_woman";
 
 @media only screen and (max-width: 576px) {
   .content {
