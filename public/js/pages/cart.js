@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -13233,14 +13233,14 @@ $(window).on("load", function () {
 
 /***/ }),
 
-/***/ 6:
+/***/ 9:
 /*!******************************************!*\
   !*** multi ./resources/js/pages/cart.js ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/js/pages/cart.js */"./resources/js/pages/cart.js");
+module.exports = __webpack_require__(/*! /home/quangha/Documents/Work/DeltaWatch/resources/js/pages/cart.js */"./resources/js/pages/cart.js");
 
 
 /***/ })

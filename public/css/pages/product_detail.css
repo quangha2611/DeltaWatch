@@ -1109,6 +1109,7 @@ html {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 0px;
+  display: block;
 }
 .content .relate-product_list .relate-product_item .item_info_name:hover {
   color: #05c3ff;

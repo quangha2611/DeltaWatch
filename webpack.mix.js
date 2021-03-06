@@ -67,7 +67,7 @@ build_scss = [
         to: 'public/css/pages'
     },
     {
-        from: "resources/sass/pages/presources/sass/pages/product_detail.scss",
+        from: "resources/sass/pages/product_detail.scss",
         to: "public/css/pages",
     },
     {
@@ -78,16 +78,6 @@ build_scss = [
         from: 'resources/sass/pages/address.scss',
         to: 'public/css/pages'
     },
-
-    {
-        from: 'resources/sass/pages/about_us.scss',
-        to: 'public/css/pages'
-    },
-    {
-        from: 'resources/sass/pages/address.scss',
-        to: 'public/css/pages'
-    },
-
     {
         from: "resources/sass/pages/login.scss",
         to: "public/css/pages"

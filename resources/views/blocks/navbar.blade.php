@@ -4,12 +4,12 @@
         <div class="row justify-content-center">
             <ul class="mb-0">
                 <li>
-                    <a href="#">
+                    <a href="{{ route('get.home.index') }}">
                         Trang chủ
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('get.product.index') }}">
                         Sản phẩm
                         <i class="fa fa-angle-down"></i>
                     </a>
@@ -169,7 +169,7 @@
                     </div>
                 </li>
                 <li style="position: relative;">
-                    <a href="#"> Smartwatch <i class="fa fa-angle-down"></i></a>
+                    <a href="{{ route('get.product.index') }}"> Smartwatch <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#" title="Apple Watch">Apple Watch </a>
@@ -190,15 +190,15 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('get.news.index') }}">
                         Tin tức
                     </a>
                 </li>
                 <li>
-                    <a href="#">Về chúng tôi</a>
+                    <a href="{{ route('get.about-us.index') }}">Về chúng tôi</a>
                 </li>
                 <li>
-                    <a href="#">Địa chỉ cửa hàng</a>
+                    <a href="{{ route('get.address.index') }}">Địa chỉ cửa hàng</a>
                 </li>
             </ul>
         </div>

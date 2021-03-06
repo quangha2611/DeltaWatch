@@ -7,8 +7,8 @@
                 <div class="account">
                     <span><i class="far fa-user-circle"></i>&nbsp;Tài khoản</span>
                     <ul class="header_sub-menu">
-                        <li><a href="#">Đăng nhập</a></li>
-                        <li><a href="#">Đăng ký</a></li>
+                        <li><a href="{{ route('get.login.index') }}">Đăng nhập</a></li>
+                        <li><a href="{{ route('get.sign-up.index') }}">Đăng ký</a></li>
                     </ul>
                 </div>
                 <div class="call">
@@ -58,7 +58,7 @@
                                 <i class="fas fa-times"></i>
                             </li>
                             @endfor
-                            <a href="#">
+                            <a href="{{ route('get.cart.index') }}">
                                 <i class="fas fa-shopping-basket"></i>Tới giỏ hàng và thanh toán
                             </a>
                         </ul>

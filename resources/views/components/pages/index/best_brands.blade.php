@@ -10,7 +10,9 @@
             <div class="list-brand">
                 @for ($i = 1; $i <= 6; $i++)
                     <div class="item-brand">
-                        <img src="{{ asset('images/brands/brand.jpg') }}" alt="" width="100%">
+                        <a href="">
+                            <img src="{{ asset('images/brands/brand.jpg') }}" alt="" width="100%">
+                        </a>
                     </div>
                 @endfor
             </div>

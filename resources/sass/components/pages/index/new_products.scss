@@ -136,9 +136,11 @@
           text-align: center;
           margin-top: 1rem;
           margin-bottom: 0px;
+          display: block;
 
           &:hover {
             color: #05c3ff;
+            text-decoration: none;
           }
         }
 

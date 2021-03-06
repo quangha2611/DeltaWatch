@@ -877,9 +877,11 @@ html {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+  display: block;
 }
 .best-equipment_list .best-equipment_item .item_info_name:hover {
   color: #05c3ff;
+  text-decoration: none;
 }
 .best-equipment_list .best-equipment_item .item_info_price {
   text-align: center;
@@ -1064,9 +1066,11 @@ html {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 0px;
+  display: block;
 }
 .new-product_list .new-product_item .item_info_name:hover {
   color: #05c3ff;
+  text-decoration: none;
 }
 .new-product_list .new-product_item .item_info_price {
   text-align: center;
@@ -1382,9 +1386,11 @@ html {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 0px;
+  display: block;
 }
 .product-by-brand .list-product-by-brand .new-product_item .item_info_name:hover {
   color: #05c3ff;
+  text-decoration: none;
 }
 .product-by-brand .list-product-by-brand .new-product_item .item_info_price {
   text-align: center;
@@ -1523,9 +1529,11 @@ html {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+  display: block;
 }
 .watch-for-man_list .watch-for-man_item .item_info_name:hover {
   color: #05c3ff;
+  text-decoration: none;
 }
 .watch-for-man_list .watch-for-man_item .item_info_price {
   text-align: center;
@@ -1712,9 +1720,11 @@ html {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+  display: block;
 }
 .watch-for-woman_list .watch-for-woman_item .item_info_name:hover {
   color: #05c3ff;
+  text-decoration: none;
 }
 .watch-for-woman_list .watch-for-woman_item .item_info_price {
   text-align: center;

@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="item_info">
-                                <p class="item_info_name">Ten san pham</p>
+                                <a href="{{ route('get.product.show') }}" class="item_info_name">Ten san pham</a>
                                 <p class="item_info_price">1.000.000₫</p>
                             </div>
                         </div>
