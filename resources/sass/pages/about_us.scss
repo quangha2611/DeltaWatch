@@ -28,12 +28,29 @@ html {
 @import '../components/notification-sale';
 @import '../blocks/header';
 @import '../blocks/nav-bar';
-
-@import "../components/pages/product/sidebar";
-@import "../components/pages/product/list_products";
-
 @import "../components/breadcrumb";
-@import "../components/pagination";
+
+.content {
+  h3 {
+    margin-bottom: 1rem;
+
+    a {
+      font-size: 24px;
+      color: black;
+
+      &:hover {
+        text-decoration: none;
+        color: #05c3ff;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .content {
+    padding: 0 1rem;
+  }
+}
 
 @import '../blocks/footer';
 @import '../components/copyright';

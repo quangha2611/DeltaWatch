@@ -25,7 +25,19 @@ build_js = [
     },
     {
         from: "resources/js/pages/product_detail.js",
-        to: "public/js/pages"
+        to: "public/js/pages",
+    },
+    {
+        from: 'resources/js/pages/news.js',
+        to: 'public/js/pages'
+    },
+    {
+        from: 'resources/js/pages/about_us.js',
+        to: 'public/js/pages'
+    },
+    {
+        from: 'resources/js/pages/address.js',
+        to: 'public/js/pages'
     },
     {
         from: "resources/js/pages/login.js",
@@ -47,13 +59,35 @@ build_scss = [
         to: "public/css/pages"
     },
     {
-        from: "resources/sass/pages/product.scss",
-        to: "public/css/pages"
+        from: 'resources/sass/pages/news.scss',
+        to: 'public/css/pages'
     },
     {
-        from: "resources/sass/pages/product_detail.scss",
-        to: "public/css/pages"
+        from: 'resources/sass/pages/product.scss',
+        to: 'public/css/pages'
     },
+    {
+        from: "resources/sass/pages/presources/sass/pages/product_detail.scss",
+        to: "public/css/pages",
+    },
+    {
+        from: 'resources/sass/pages/about_us.scss',
+        to: 'public/css/pages'
+    },
+    {
+        from: 'resources/sass/pages/address.scss',
+        to: 'public/css/pages'
+    },
+
+    {
+        from: 'resources/sass/pages/about_us.scss',
+        to: 'public/css/pages'
+    },
+    {
+        from: 'resources/sass/pages/address.scss',
+        to: 'public/css/pages'
+    },
+
     {
         from: "resources/sass/pages/login.scss",
         to: "public/css/pages"
@@ -65,7 +99,7 @@ build_scss = [
     {
         from: "resources/sass/pages/cart.scss",
         to: "public/css/pages"
-    },
+    }
 ];
 
 build_js.map(function (file) {
