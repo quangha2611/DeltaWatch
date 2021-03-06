@@ -4,7 +4,13 @@
     "/css/pages/index.css": "/css/pages/index.css",
     "/css/pages/product.css": "/css/pages/product.css",
     "/css/pages/product_detail.css": "/css/pages/product_detail.css",
+    "/css/pages/login.css": "/css/pages/login.css",
+    "/css/pages/sign_up.css": "/css/pages/sign_up.css",
+    "/css/pages/cart.css": "/css/pages/cart.css",
+    "/js/pages/cart.js": "/js/pages/cart.js",
     "/js/pages/index.js": "/js/pages/index.js",
+    "/js/pages/login.js": "/js/pages/login.js",
     "/js/pages/product.js": "/js/pages/product.js",
-    "/js/pages/product_detail.js": "/js/pages/product_detail.js"
+    "/js/pages/product_detail.js": "/js/pages/product_detail.js",
+    "/js/pages/sign_up.js": "/js/pages/sign_up.js"
 }

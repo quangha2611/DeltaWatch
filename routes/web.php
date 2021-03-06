@@ -17,5 +17,11 @@ Route::get('/', 'HomeController@index')->name('get.home.index');
 
 Route::prefix('products')->group(function () {
     Route::get('/index', 'ProductController@index')->name('get.product.index');
-    Route::get('/detail', 'ProductController@productDetail')->name('get.product.detail');
+    Route::get('/detail', 'ProductDetailController@index')->name('get.product.detail.index');
 });
+
+Route::get('/login', 'LoginController@index')->name('get.login.index');
+Route::get('/signup', 'SignUpController@index')->name('get.sign.up.index');
+Route::get('/cart', 'CartController@index')->name('get.cart.index');
+
+

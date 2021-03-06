@@ -17,30 +17,54 @@ mix.js('resources/js/app.js', 'public/js')
 build_js = [
     {
         from: "resources/js/pages/index.js",
-        to: "public/js/pages",
+        to: "public/js/pages"
     },
     {
         from: "resources/js/pages/product.js",
-        to: "public/js/pages",
+        to: "public/js/pages"
     },
     {
         from: "resources/js/pages/product_detail.js",
-        to: "public/js/pages",
+        to: "public/js/pages"
     },
+    {
+        from: "resources/js/pages/login.js",
+        to: "public/js/pages"
+    },
+    {
+        from: "resources/js/pages/sign_up.js",
+        to: "public/js/pages"
+    },
+    {
+        from: "resources/js/pages/cart.js",
+        to: "public/js/pages"
+    }
 ];
 
 build_scss = [
     {
         from: "resources/sass/pages/index.scss",
-        to: "public/css/pages",
+        to: "public/css/pages"
     },
     {
         from: "resources/sass/pages/product.scss",
-        to: "public/css/pages",
+        to: "public/css/pages"
     },
     {
         from: "resources/sass/pages/product_detail.scss",
-        to: "public/css/pages",
+        to: "public/css/pages"
+    },
+    {
+        from: "resources/sass/pages/login.scss",
+        to: "public/css/pages"
+    },
+    {
+        from: "resources/sass/pages/sign_up.scss",
+        to: "public/css/pages"
+    },
+    {
+        from: "resources/sass/pages/cart.scss",
+        to: "public/css/pages"
     },
 ];
 
