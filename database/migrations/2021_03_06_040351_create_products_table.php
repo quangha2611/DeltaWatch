@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->integer('po_brand');
             $table->string('po_category');
             $table->integer('po_provider');
+            $table->integer('po_price');
             $table->timestamps();
         });
     }

@@ -12,7 +12,7 @@
             <div class="col-xl-8 col-lg-8 col-sm-7 pl-0 pr-0">
                 <div class="swiper-container watch-for-man_list">
                     <div class="swiper-wrapper">
-                        @for ($i=0; $i<=10; $i++)
+                        @foreach ($manProducts as $product)
                             <div class="swiper-slide watch-for-man_item">
                             <div class="item_image">
                                 <img src="{{ asset('images/products/product.jpg') }}" width="100%" alt="">
@@ -28,11 +28,11 @@
                                 </div>
                             </div>
                             <div class="item_info">
-                                <a href="{{ route('get.product.show') }}" class="item_info_name">Ten san pham</a>
-                                <p class="item_info_price">1.000.000₫</p>
+                                <a href="{{ route('get.product.show') }}" class="item_info_name">{{ $product->po_name }}</a>
+                                <p class="item_info_price">{{ $product->po_price }}</p>
                             </div>
                         </div>
-                        @endfor
+                        @endforeach
                     </div>
                     <!-- Add Arrows -->
                     <div class="swiper-button-next watch-for-man_slide-next">

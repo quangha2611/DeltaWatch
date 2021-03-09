@@ -9,7 +9,7 @@
     </div>
     <div class="swiper-container new-product_list">
         <div class="swiper-wrapper">
-            @for ($i = 1; $i <= 12; $i++)
+            @foreach ($newProducts as $product)
                 <div class="swiper-slide new-product_item">
                 <div class="item_image">
                     <img src="{{ asset('images/products/product.jpg') }}" width="90%" alt="">
@@ -26,11 +26,11 @@
                     <img src="{{ asset('images/icons/options.png') }}" alt="" class="item_image_option">
                 </div>
                ` <div class="item_info">`
-                    <a href="{{ route('get.product.show') }}" class="item_info_name">Ten san pham</a>
-                    <p class="item_info_price">1.000.000₫</p>
+                    <a href="{{ route('get.product.show') }}" class="item_info_name">{{ $product->po_name }}</a>
+                    <p class="item_info_price">{{ $product->po_price }}</p>
                 </div>
             </div>
-            @endfor
+            @endforeach
         </div>
         <!-- Add Arrows -->
         <div class="swiper-button-next new-product_slide-next">

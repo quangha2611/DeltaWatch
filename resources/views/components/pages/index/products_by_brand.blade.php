@@ -7,16 +7,16 @@
             </h2>
         </div>
         <div class="list-brand row">
-            @for ($i=1; $i<=5; $i++)
+            @foreach ($brands as $brand)
                 <div class="brand_item">
                     <div class="brand_item_image">
                         <img src="{{ asset('images/products/product1.png') }}" alt="" class="animation3d">
                     </div>
                     <div class="brand_item_name">
-                        <p>Apple Watch</p>
+                        <p>{{ $brand->br_name }} Watch</p>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         </div>
         <div class="list-product-by-brand row">
             @for ($i=1; $i<=8; $i++)
