@@ -15,7 +15,6 @@ class MyProductSeeder extends Seeder
         //
         Model::unguard();
 
-        DB::table('products')->truncate();
 
         $products =
             array(

@@ -15,7 +15,6 @@ class MyProviderSeeder extends Seeder
         //
         Model::unguard();
 
-        DB::table('providers')->truncate();
 
         $providers = array(
         0 => array('id' => '1', 'prov_name' => 'Đồng Hồ Thông Minh Giá Rẻ', 'prov_address' => ' Tòa Nhà CT5A, KĐT Xa La, Quận Hà Đông, TP Hà Nội (TPHN)', 'prov_phone' => '0914 511 530', 'prov_email' => 'donghothongminh70@gmail.com', 'prov_represent' => 'Phạm Tú Anh'),

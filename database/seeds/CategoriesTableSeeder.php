@@ -16,7 +16,6 @@ class CategoriesTableSeeder extends Seeder
         //
         Model::unguard();
 
-        DB::table('categories')->truncate();
 
         $categories =
             array(

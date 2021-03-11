@@ -15,7 +15,6 @@ class MyBrandSeeder extends Seeder
         //
         Model::unguard();
 
-        DB::table('brands')->truncate();
 
         $brands =
             array(

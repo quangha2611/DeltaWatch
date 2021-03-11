@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Brand;
+use App\Post;
 use App\Product;
 
 class HomeController extends Controller
@@ -16,6 +17,7 @@ class HomeController extends Controller
         $manProducts = Product::where('po_gender', 'male')->get();
         $womanProducts = Product::where('po_gender', 'female')->get();
         $bestProducts = Product::where('po_hot', 1)->get();
+        $posts = Post::where('status', 'PUBLISHED')->with('author')->get();
         $viewData = [
             'categories' => $categories,
             'brands' => $brands,
@@ -23,6 +25,7 @@ class HomeController extends Controller
             'manProducts' => $manProducts,
             'womanProducts' => $womanProducts,
             'bestProducts' => $bestProducts,
+            'posts' => $posts,
         ];
 
         return view('pages.index')->with($viewData);
