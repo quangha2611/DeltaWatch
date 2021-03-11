@@ -38,9 +38,6 @@ Route::get('signup', 'SignUpController@index')->name('get.sign-up.index');
 
 Route::get('cart', 'CartController@index')->name('get.cart.index');
 
-
-
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

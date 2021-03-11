@@ -25,7 +25,7 @@
 
         @include('components.pages.product_detail.product_relate')
 
-        @include('components/pages/index/posts')
+        @include('components.pages.index.posts')
     </div>
 
 @endsection

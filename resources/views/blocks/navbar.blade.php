@@ -16,7 +16,7 @@
                     <div class="menu-product-drop-down">
                         <div class="container">
                             <div class="row">
-                                @foreach ($categories as $category)
+                                @foreach ($nav_categories as $category)
                                     <div class="col-xl-3 col-lg-3">
                                         <ul class="pl-0">
                                             <h3>
@@ -38,18 +38,19 @@
                 <li style="position: relative;">
                     <a href="{{ route('get.product.index') }}"> Smartwatch <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
-                        @for ($i = 0; $i < 3; $i++)
-                        <li>
-                            <a href="#" title="{{ $brands[$i]->br_name }}">{{ $brands[$i]->br_name }} Watch </a>
-                        </li>
-                        @endfor
-                        <li>
-                            <a href="#" title="Huawei Watch">Huawei Watch</a>
-                            <i class="fa fa-angle-right"></i>
-                            <ul class="sub-menu-2">
-                                <li><a href="#" title="Đồng hồ sức khỏe Mi">Đồng hồ sức khỏe Mi</a></li>
-                            </ul>
-                        </li>
+                        @foreach ($nav_brands as $brand)
+                            <li>
+                                <a href="#" title="{{ $brand->br_name }}">{{ $brand->br_name }} Watch </a>
+                                <i class="fa fa-angle-right"></i>
+                                <ul class="sub-menu-2">
+                                    @foreach($brand->products as $key => $product)
+                                        @if ($key <= 3)
+                                            <li><a href="#" title="{{ $product->po_name }}">{{ $product->po_name }}</a></li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </li>
+                        @endforeach
                     </ul>
                 </li>
                 <li>
