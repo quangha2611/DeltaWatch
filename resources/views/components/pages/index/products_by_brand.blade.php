@@ -7,10 +7,10 @@
             </h2>
         </div>
         <div class="list-brand row">
-            @foreach ($brands as $brand)
+            @foreach ($brands as $key => $brand)
                 <div class="brand_item">
                     <div class="brand_item_image">
-                        <img src="{{ asset('images/products/product1.png') }}" alt="" class="animation3d">
+                        <img src="{{ asset('images/brands/brand' . $key .'.png') }}" alt="" class="animation3d">
                     </div>
                     <div class="brand_item_name">
                         <p>{{ $brand->br_name }} Watch</p>
@@ -22,7 +22,7 @@
             @for ($i=1; $i<=8; $i++)
                 <div class="new-product_item">
                 <div class="item_image">
-                    <img src="{{ asset('images/products/product.jpg') }}" width="90%" alt="">
+                    <img src="{{ asset('images/products/product0.jpg') }}" width="90%" alt="">
                     <div class="item_image_mask">
                         <div class="animation3d">
                             <div>

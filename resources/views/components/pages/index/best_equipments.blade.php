@@ -11,10 +11,10 @@
         <div class="row">
             <div class="swiper-container best-equipment_list">
                 <div class="swiper-wrapper">
-                    @foreach ($bestProducts as $product)
+                    @foreach ($bestProducts as $key => $product)
                         <div class="swiper-slide best-equipment_item">
                         <div class="item_image">
-                            <img src="{{ asset('images/products/product.jpg') }}" width="90%" alt="">
+                            <img src="{{ asset('images/products/product' . $key . '.jpg') }}" width="90%" alt="">
                             <div class="item_image_mask">
                                 <div class="animation3d">
                                     <div>

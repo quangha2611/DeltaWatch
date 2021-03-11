@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Brand;
 use App\Product;
+
 class HomeController extends Controller
 {
-    public function index ()
+    public function index()
     {
         $categories = Category::where('parent_id', '=', 0)->with('subCats')->limit(4)->get();
-        $brands = Brand::get();
+        $brands = Brand::limit(5)->get();
         $newProducts = Product::limit(12)->orderBy('created_at', 'desc')->get();
         $manProducts = Product::where('po_gender', 'male')->get();
         $womanProducts = Product::where('po_gender', 'female')->get();
@@ -25,6 +26,5 @@ class HomeController extends Controller
         ];
 
         return view('pages.index')->with($viewData);
-
     }
 }
