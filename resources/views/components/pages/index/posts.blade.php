@@ -16,7 +16,7 @@
                 <div class="knowledge_item">
                     <div class="tag-date">25/11/2019</div>
                     <div class="knowledge_item_img">
-                        <img src="{{ asset('images/posts/post.jpg') }}" alt="" width="100%">
+                        <img src="{{ asset('images/posts/post0.jpg') }}" alt="" width="100%">
                     </div>
                     <div class="knowledge_item_des">
                         <p class="des_author">Đăng bởi: Đào Thị Uyên</p>

@@ -20,14 +20,13 @@ class CreateProductsTable extends Migration
             $table->string('po_image');
             $table->tinyInteger('po_gender')->default(0);
             $table->tinyInteger('po_hot')->default(0);
-            $table->text('po_size')->nullable();
-            $table->text('po_color')->nullable();
             $table->longText('po_info');
             $table->longText('po_policy')->nullable();
             $table->integer('po_quantity');
             $table->integer('po_brand');
             $table->string('po_category');
             $table->integer('po_provider');
+            $table->integer('po_price');
             $table->timestamps();
         });
     }

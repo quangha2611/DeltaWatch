@@ -1,12 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use TCG\Voyager\Models\Category;
-use TCG\Voyager\Models\DataRow;
-use TCG\Voyager\Models\DataType;
-use TCG\Voyager\Models\Menu;
-use TCG\Voyager\Models\MenuItem;
-use TCG\Voyager\Models\Permission;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -17,213 +13,44 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        //Data Type
-        $dataType = $this->dataType('name', 'categories');
-        if (!$dataType->exists) {
-            $dataType->fill([
-                'slug'                  => 'categories',
-                'display_name_singular' => __('voyager::seeders.data_types.category.singular'),
-                'display_name_plural'   => __('voyager::seeders.data_types.category.plural'),
-                'icon'                  => 'voyager-categories',
-                'model_name'            => 'TCG\\Voyager\\Models\\Category',
-                'controller'            => '',
-                'generate_permissions'  => 1,
-                'description'           => '',
-            ])->save();
+        //
+        Model::unguard();
+
+
+        $categories =
+            array(
+                0 => array('id' => '1', 'name' => 'Đồng hồ nam', 'parent_id' => '0'),
+                1 => array('id' => '2', 'name' => 'Đồng hồ nữ', 'parent_id' => '0'),
+                2 => array('id' => '3', 'name' => 'Đồng hồ đôi', 'parent_id' => '0'),
+                3 => array('id' => '4', 'name' => 'Đồng hồ trẻ em', 'parent_id' => '0'),
+                4 => array('id' => '5', 'name' => 'Đồng hồ Philips', 'parent_id' => '1'),
+                5 => array('id' => '6', 'name' => 'Đồng hồ Epos swi', 'parent_id' => '1'),
+                6 => array('id' => '7', 'name' => 'Đồng hồ Eries go', 'parent_id' => '1'),
+                7 => array('id' => '8', 'name' => 'Đồng hồ Citizen', 'parent_id' => '1'),
+                8 => array('id' => '9', 'name' => 'Đồng hồ Tourbill', 'parent_id' => '1'),
+                9 => array('id' => '10', 'name' => 'Đồng hồ Du manoir', 'parent_id' => '1'),
+                10 => array('id' => '11', 'name' => 'Đồng hồ nữ Casio', 'parent_id' => '2'),
+                11 => array('id' => '12', 'name' => 'Đồng hồ nữ QQ', 'parent_id' => '2'),
+                12 => array('id' => '13', 'name' => 'Đồng hồ Orginal', 'parent_id' => '2'),
+                13 => array('id' => '14', 'name' => 'Đồng hồ Fosill', 'parent_id' => '2'),
+                14 => array('id' => '15', 'name' => 'Đồng hồ Maceur', 'parent_id' => '2'),
+                15 => array('id' => '16', 'name' => 'Đồng hồ Seiko', 'parent_id' => '2'),
+                16 => array('id' => '17', 'name' => 'Đồng hồ đôi Eros', 'parent_id' => '3'),
+                17 => array('id' => '18', 'name' => 'Đông ht_description', 'parent_id' => '3'),
+                18 => array('id' => '19', 'name' => 'Đồng hồ đôi Casio', 'parent_id' => '3'),
+                19 => array('id' => '20', 'name' => 'Đồng hồ đôi Emoji', 'parent_id' => '3'),
+                20 => array('id' => '21', 'name' => 'Đồng hồ Omega', 'parent_id' => '3'),
+                21 => array('id' => '22', 'name' => 'Đồng hồ Kazien', 'parent_id' => '3'),
+                22 => array('id' => '23', 'name' => 'Đồng hồ báo thức', 'parent_id' => '4'),
+                23 => array('id' => '24', 'name' => 'Đồng hồ định vị', 'parent_id' => '4'),
+                24 => array('id' => '25', 'name' => 'Đồng hồ định vị 1', 'parent_id' => '4'),
+                25 => array('id' => '26', 'name' => 'Đồng hồ sức khỏe', 'parent_id' => '4'),
+                26 => array('id' => '27', 'name' => 'Đồng hồ để bàn', 'parent_id' => '4'),
+                27 => array('id' => '28', 'name' => 'Đồng hồ đồ chơi', 'parent_id' => '4'),
+            );;
+        foreach ($categories as $category) {
+            $category['slug'] = Str::slug($category['name']);
+            DB::table('categories')->insert($category);
         }
-        //Data Rows
-        $categoryDataType = DataType::where('slug', 'categories')->firstOrFail();
-        $dataRow = $this->dataRow($categoryDataType, 'id');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'number',
-                'display_name' => __('voyager::seeders.data_rows.id'),
-                'required'     => 1,
-                'browse'       => 0,
-                'read'         => 0,
-                'edit'         => 0,
-                'add'          => 0,
-                'delete'       => 0,
-                'order'        => 1,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($categoryDataType, 'parent_id');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'select_dropdown',
-                'display_name' => __('voyager::seeders.data_rows.parent'),
-                'required'     => 0,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => [
-                    'default' => '',
-                    'null'    => '',
-                    'options' => [
-                        '' => '-- None --',
-                    ],
-                    'relationship' => [
-                        'key'   => 'id',
-                        'label' => 'name',
-                    ],
-                ],
-                'order' => 2,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($categoryDataType, 'order');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => __('voyager::seeders.data_rows.order'),
-                'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => [
-                    'default' => 1,
-                ],
-                'order' => 3,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($categoryDataType, 'name');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => __('voyager::seeders.data_rows.name'),
-                'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'order'        => 4,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($categoryDataType, 'slug');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => __('voyager::seeders.data_rows.slug'),
-                'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => [
-                    'slugify' => [
-                        'origin' => 'name',
-                    ],
-                ],
-                'order' => 5,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($categoryDataType, 'created_at');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'timestamp',
-                'display_name' => __('voyager::seeders.data_rows.created_at'),
-                'required'     => 0,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 0,
-                'add'          => 0,
-                'delete'       => 0,
-                'order'        => 6,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($categoryDataType, 'updated_at');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'timestamp',
-                'display_name' => __('voyager::seeders.data_rows.updated_at'),
-                'required'     => 0,
-                'browse'       => 0,
-                'read'         => 0,
-                'edit'         => 0,
-                'add'          => 0,
-                'delete'       => 0,
-                'order'        => 7,
-            ])->save();
-        }
-
-        //Menu Item
-        $menu = Menu::where('name', 'admin')->firstOrFail();
-        $menuItem = MenuItem::firstOrNew([
-            'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.categories'),
-            'url'     => '',
-            'route'   => 'voyager.categories.index',
-        ]);
-        if (!$menuItem->exists) {
-            $menuItem->fill([
-                'target'     => '_self',
-                'icon_class' => 'voyager-categories',
-                'color'      => null,
-                'parent_id'  => null,
-                'order'      => 8,
-            ])->save();
-        }
-
-        //Permissions
-        Permission::generateFor('categories');
-
-        //Content
-        $category = Category::firstOrNew([
-            'slug' => 'category-1',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 1',
-            ])->save();
-        }
-
-        $category = Category::firstOrNew([
-            'slug' => 'category-2',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 2',
-            ])->save();
-        }
-    }
-
-    /**
-     * [dataRow description].
-     *
-     * @param [type] $type  [description]
-     * @param [type] $field [description]
-     *
-     * @return [type] [description]
-     */
-    protected function dataRow($type, $field)
-    {
-        return DataRow::firstOrNew([
-            'data_type_id' => $type->id,
-            'field'        => $field,
-        ]);
-    }
-
-    /**
-     * [dataType description].
-     *
-     * @param [type] $field [description]
-     * @param [type] $for   [description]
-     *
-     * @return [type] [description]
-     */
-    protected function dataType($field, $for)
-    {
-        return DataType::firstOrNew([$field => $for]);
     }
 }
