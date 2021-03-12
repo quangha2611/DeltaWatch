@@ -9,27 +9,28 @@
     </div>
     <div class="swiper-container new-product_list">
         <div class="swiper-wrapper">
-            @foreach ($newProducts as $key => $product)
+            @foreach ($newProducts as $product)
                 <div class="swiper-slide new-product_item">
-                <div class="item_image">
-                    <img src="{{ asset('images/products/product' . $key .'.jpg') }}" width="90%" alt="">
-                    <div class="item_image_mask">
-                        <div class="animation3d">
-                            <div>
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                            <div>
-                                <i class="fas fa-shopping-basket iconcart"></i>
+                    <div class="item_image">
+                        <img src="{{ asset('images/products/product' . $product->po_image .'.jpg') }}" width="90%" alt="">
+                        <div class="item_image_mask">
+                            <div class="animation3d">
+                                <div>
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-shopping-basket iconcart"></i>
+                                </div>
                             </div>
                         </div>
+                        <img src="{{ asset('images/icons/options.png') }}" alt="" class="item_image_option">
                     </div>
-                    <img src="{{ asset('images/icons/options.png') }}" alt="" class="item_image_option">
+                    <div class="item_info">
+                        <a href="{{ route('get.product.show', $product->id) }}"
+                           class="item_info_name">{{ $product->po_name }}</a>
+                        <p class="item_info_price">{{ $product->po_price }}</p>
+                    </div>
                 </div>
-               ` <div class="item_info">`
-                    <a href="{{ route('get.product.show') }}" class="item_info_name">{{ $product->po_name }}</a>
-                    <p class="item_info_price">{{ $product->po_price }}</p>
-                </div>
-            </div>
             @endforeach
         </div>
         <!-- Add Arrows -->

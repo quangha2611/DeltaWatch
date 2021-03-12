@@ -17,7 +17,7 @@ Route::get('/', 'HomeController@index')->name('get.home.index');
 
 Route::prefix('products')->group(function () {
     Route::get('index', 'ProductController@index')->name('get.product.index');
-    Route::get('show', 'ProductController@show')->name('get.product.show');
+    Route::get('show/{id}', 'ProductController@show')->name('get.product.show');
 });
 
 Route::prefix('news')->group(function () {
