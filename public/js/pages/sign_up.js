@@ -13240,7 +13240,7 @@ $(window).on("load", function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/quangha/Documents/Work/DeltaWatch/resources/js/pages/sign_up.js */"./resources/js/pages/sign_up.js");
+module.exports = __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/js/pages/sign_up.js */"./resources/js/pages/sign_up.js");
 
 
 /***/ })
