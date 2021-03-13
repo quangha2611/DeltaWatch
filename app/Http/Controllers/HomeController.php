@@ -15,7 +15,7 @@ class HomeController extends Controller
         $manProducts   = Product::where('po_gender', 'male')->get();
         $womanProducts = Product::where('po_gender', 'female')->get();
         $bestProducts  = Product::where('po_hot', 1)->get();
-        $posts         = Post::where('status', 'PUBLISHED')->with('author')->get();
+        $posts         = Post::where('status', 'PUBLISHED')->with('author')->limit(4)->get();
         $viewData      = [
             'brands'        => $brands,
             'newProducts'   => $newProducts,

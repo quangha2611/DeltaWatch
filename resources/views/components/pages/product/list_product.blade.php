@@ -46,10 +46,10 @@
     </div>
 
     <div class="list-product">
-        @for ($i=1; $i<=15; $i++)
+        @foreach ($products as $product)
             <div class="product_item">
                 <div class="item_image">
-                    <img src="{{ asset('images/products/product.jpg') }}" width="90%" alt="">
+                    <img src="{{ asset('images/products/product' . $product->id . '.jpg') }}" width="90%" alt="">
                     <div class="item_image_mask">
                         <div class="animation3d">
                             <div>
@@ -63,10 +63,10 @@
                     <img src="{{ asset('images/icons/options.png') }}" alt="" class="item_image_option">
                 </div>
                 <div class="item_info">
-                    <a href="{{ route('get.product.show') }}" class="item_info_name">Ten san pham</a>
-                    <p class="item_info_price">1.000.000₫</p>
+                    <a href="{{ route('get.product.show', $product->id) }}" class="item_info_name">{{ $product->po_name }}</a>
+                    <p class="item_info_price">{{ $product->po_price }}</p>
                 </div>
             </div>
-        @endfor
+        @endforeach
     </div>
 </div>

@@ -17,29 +17,23 @@
                 <i class="fa fa-minus btn-close-drop-menu"></i>
 
                 <ul class="drop-menu menu-drop-1">
-                    <li class="menu-item has-drop-menu">
-                        <i class="fa fa-angle-right"></i>
-                        <a href="#">Trang chủ</a>
-                        <i class="fa fa-plus btn-show-drop-menu"></i>
-                        <i class="fa fa-minus btn-close-drop-menu"></i>
+                    @foreach ($categories as $category)
+                        <li class="menu-item has-drop-menu">
+                            <i class="fa fa-angle-right"></i>
+                            <a href="#">{{ $category->name }}</a>
+                            <i class="fa fa-plus btn-show-drop-menu"></i>
+                            <i class="fa fa-minus btn-close-drop-menu"></i>
 
-                        <ul class="drop-menu menu-drop-2">
-                            <li class="menu-item">
-                                <i class="fa fa-angle-right"></i>
-                                <a href="#">Trang chủ</a>
-                            </li>
-                            <li class="menu-item">
-                                <i class="fa fa-angle-right"></i>
-                                <a href="#">Trang chur</a>
-                            </li>
-                        </ul>
-
-                    </li>
-
-                    <li class="menu-item">
-                        <i class="fa fa-angle-right"></i>
-                        <a href="#">Trang chur</a>
-                    </li>
+                            <ul class="drop-menu menu-drop-2">
+                                @foreach ($category->subCats as $subCat)
+                                    <li class="menu-item">
+                                        <i class="fa fa-angle-right"></i>
+                                        <a href="#">{{ $subCat->name }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endforeach
                 </ul>
 
             </li>
@@ -49,29 +43,25 @@
                 <i class="fa fa-minus btn-close-drop-menu"></i>
 
                 <ul class="drop-menu menu-drop-1">
-                    <li class="menu-item has-drop-menu">
-                        <i class="fa fa-angle-right"></i>
-                        <a href="#">Trang chủ</a>
-                        <i class="fa fa-plus btn-show-drop-menu"></i>
-                        <i class="fa fa-minus btn-close-drop-menu"></i>
+                    @foreach ($brands as $brand)
+                        <li class="menu-item has-drop-menu">
+                            <i class="fa fa-angle-right"></i>
+                            <a href="#">{{ $brand->br_name }}</a>
+                            <i class="fa fa-plus btn-show-drop-menu"></i>
+                            <i class="fa fa-minus btn-close-drop-menu"></i>
 
-                        <ul class="drop-menu menu-drop-2">
-                            <li class="menu-item">
-                                <i class="fa fa-angle-right"></i>
-                                <a href="#">Trang chủ</a>
-                            </li>
-                            <li class="menu-item">
-                                <i class="fa fa-angle-right"></i>
-                                <a href="#">Trang chur</a>
-                            </li>
-                        </ul>
+                            <ul class="drop-menu menu-drop-2">
+                                @foreach ($brand->products as $product)
+                                    <li class="menu-item">
+                                        <i class="fa fa-angle-right"></i>
+                                        <a href="#">{{ $product->po_name  }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
 
-                    </li>
+                        </li>
+                    @endforeach
 
-                    <li class="menu-item">
-                        <i class="fa fa-angle-right"></i>
-                        <a href="#">Trang chur</a>
-                    </li>
                 </ul>
 
             </li>
@@ -92,15 +82,15 @@
             Thương hiệu
         </div>
         <ul>
-            @for ($i=1; $i<=5; $i++)
+            @foreach ($brands as $brand)
                 <li>
-                    <input type="checkbox" name="" id="{{ 'brand' . $i }}">
+                    <input type="checkbox" name="" id="{{ 'brand' . $brand->id }}">
                     <div class="fake-checkbox"></div>
-                    <label for="{{ 'brand' . $i }}">
-                        {{ 'Brand ' . $i }}
+                    <label for="{{ 'brand' . $brand->id }}">
+                        {{ $brand->br_name }}
                     </label>
                 </li>
-            @endfor
+            @endforeach
         </ul>
     </div>
 

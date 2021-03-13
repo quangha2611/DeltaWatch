@@ -11,10 +11,10 @@
         <div class="row">
             <div class="swiper-container best-equipment_list">
                 <div class="swiper-wrapper">
-                    @foreach ($bestProducts as $key => $product)
+                    @foreach ($bestProducts as $product)
                         <div class="swiper-slide best-equipment_item">
                         <div class="item_image">
-                            <img src="{{ asset('images/products/product' . $key . '.jpg') }}" width="90%" alt="">
+                            <img src="{{ asset('images/products/product' . $product->po_image . '.jpg') }}" width="90%" alt="">
                             <div class="item_image_mask">
                                 <div class="animation3d">
                                     <div>
@@ -28,7 +28,7 @@
                             <img src="{{ asset('images/icons/options.png') }}" alt="" class="item_image_option">
                         </div>
                         <div class="item_info">
-                            <a href="{{ route('get.product.show') }}" class="item_info_name">{{ $product->po_name }}</a>
+                            <a href="{{ route('get.product.show', $product->id) }}" class="item_info_name">{{ $product->po_name }}</a>
                             <p class="item_info_price">{{ $product->po_price }}</p>
                         </div>
                     </div>
