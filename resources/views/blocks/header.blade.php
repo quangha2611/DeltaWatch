@@ -100,9 +100,9 @@
     </div>
     <div class="header-mobile_menu">
         <div style="padding: 0 2rem; margin-bottom: 1rem;">
-            <a href="#">Đăng nhập</a>
+            <a href="{{ route("get.login.index") }}">Đăng nhập</a>
             <span>/</span>
-            <a href="#">Đăng ký</a>
+            <a href="{{ route("get.sign-up.index") }}">Đăng ký</a>
         </div>
         <div class="header-mobile_menu-main">
             <ul class="">
