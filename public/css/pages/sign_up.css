@@ -691,26 +691,7 @@ html {
 .content_main input {
   height: 3rem;
   margin-bottom: 1rem;
-  background-color: #ebebeb !important;
   color: #000;
-}
-.content_main ::-moz-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
-  opacity: 1;
-  /* Firefox */
-}
-.content_main :-ms-input-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
-  opacity: 1;
-  /* Firefox */
-}
-.content_main ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
-  opacity: 1;
-  /* Firefox */
 }
 .content_main button {
   height: 3rem;

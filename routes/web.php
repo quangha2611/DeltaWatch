@@ -33,8 +33,10 @@ Route::prefix('address')->group(function () {
 });
 
 Route::get('login', 'LoginController@index')->name('get.login.index');
+Route::post('login', 'LoginController@login')->name('post.login.login');
 
 Route::get('signup', 'SignUpController@index')->name('get.sign-up.index');
+Route::post('signup', 'SignUpController@signup')->name('post.sign-up.signup');
 
 Route::get('cart', 'CartController@index')->name('get.cart.index');
 

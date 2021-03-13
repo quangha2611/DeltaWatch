@@ -5,10 +5,14 @@
 
             <div class="header_contact">
                 <div class="account">
-                    <span><i class="far fa-user-circle"></i>&nbsp;Tài khoản</span>
+                    <span><i class="far fa-user-circle"></i>&nbsp;{{ Auth::guard('customer')->check() ? Auth::guard('customer')->user()->name : 'Tài khoản' }}</span>
                     <ul class="header_sub-menu">
-                        <li><a href="{{ route('get.login.index') }}">Đăng nhập</a></li>
-                        <li><a href="{{ route('get.sign-up.index') }}">Đăng ký</a></li>
+                        @if (!Auth::guard('customer')->check())
+                            <li><a href="{{ route('get.login.index') }}">Đăng nhập</a></li>
+                            <li><a href="{{ route('get.sign-up.index') }}">Đăng ký</a></li>
+                        @else
+                            <li><a href="">Đăng xuất</a></li>
+                        @endif
                     </ul>
                 </div>
                 <div class="call">
