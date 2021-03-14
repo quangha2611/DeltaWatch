@@ -4,6 +4,11 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/pages/index.css') }}">
+    <style>
+        .js-add-to-cart {
+            cursor: pointer;
+        }
+    </style>
 @endsection
 
 @section('content')

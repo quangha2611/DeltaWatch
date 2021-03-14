@@ -28,7 +28,7 @@
                             <div>
                                 <i class="fas fa-search-plus"></i>
                             </div>
-                            <div>
+                            <div class="js-add-to-cart">
                                 <i class="fas fa-shopping-basket iconcart"></i>
                             </div>
                         </div>

@@ -38,34 +38,8 @@
                         <span><i class="fa fa-search"></i> Tìm kiếm</span>
                     </li>
                     <span style="font-weight: normal; color: #ebebeb; font-size: 18px; margin-top: -5px;">|</span>
-                    <li>
-                        <span><i class="fas fa-shopping-basket"></i> Giỏ hàng (0)</span>
-                        <ul class="cart header_sub-menu">
-                            @for ($i=1; $i<=3; $i++)
-                                <li class="cart_item">
-                                <div class="cart_item_image">
-                                    <img src="{{ asset('images/products/product.jpg') }}" alt="" width="100%">
-                                </div>
-                                <div class="cart_item_info">
-                                    <a href="#" class="name">Samsung Gear Pro</a>
-                                    <p class="price">4.500.000₫</p>
-                                    <div class="quantity">
-                                        <button type="button" onclick="if (document.getElementById('quantity1').value < 100 ) { document.getElementById('quantity1').value = parseInt(document.getElementById('quantity1').value) + 1 }">
-                                            +
-                                        </button>
-                                        <input type="number" value="1" id="quantity1">
-                                        <button type="button" onclick="if (document.getElementById('quantity1').value > 1 ) { document.getElementById('quantity1').value = parseInt(document.getElementById('quantity1').value) - 1 }">
-                                            -
-                                        </button>
-                                    </div>
-                                </div>
-                                <i class="fas fa-times"></i>
-                            </li>
-                            @endfor
-                            <a href="{{ route('get.cart.index') }}">
-                                <i class="fas fa-shopping-basket"></i>Tới giỏ hàng và thanh toán
-                            </a>
-                        </ul>
+                    <li id="cart">
+                        @include('components.cart')
                     </li>
                 </ul>
             </div>
