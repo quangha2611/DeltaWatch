@@ -18,6 +18,8 @@ Route::get('/', 'HomeController@index')->name('get.home.index');
 Route::prefix('products')->group(function () {
     Route::get('index', 'ProductController@index')->name('get.product.index');
     Route::get('show/{id}', 'ProductController@show')->name('get.product.show');
+    // test ajax
+    //Route::get('related-product/{id}', 'ProductController@getRelatedProductAjax')->name('get.related-product.data');
 });
 
 Route::prefix('news')->group(function () {
