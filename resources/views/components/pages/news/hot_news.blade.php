@@ -2,7 +2,7 @@
     <div class="col-xl-9 col-lg-9 col-sm-12">
         <div class="row">
             <div class="post-big col-xl-6 col-lg-6 col-sm-6 pl-0">
-                <div class="tag-date">25/11/2019</div>
+                <div class="tag-date">{{ date_format($posts[0]->created_at, "d/m/Y") }}</div>
                 <div class="post-big_img">
                     <img src="{{ asset('images/posts/post'. $posts[0]->id .'.jpg') }}" alt="" width="100%">
                 </div>
@@ -14,7 +14,7 @@
             <div class="post-thumbnail col-xl-6 col-lg-6 col-sm-6">
                 <div class="d-flex">
                     <div class="post-big col-xl-5 col-lg-5 col-sm-4 col-4 pl-0 pr-0">
-                        <div class="tag-date">25/11/2019</div>
+                        <div class="tag-date">{{ date_format($posts[0]->created_at, "d/m/Y") }}</div>
                         <div class="post-big_img">
                             <img src="{{ asset('images/posts/post'. $posts[1]->id .'.jpg') }}" alt="" width="100%">
                         </div>
@@ -36,11 +36,11 @@
                 Danh mục tin
             </div>
             <ul class="">
-                @foreach ($posts as $post)
+                @for ($i = 0; $i < 4; $i++)
                 <li class="menu-item">
-                    <a href="#">{{ $post->title }}</a>
+                    <a href="#">{{ $posts[$i]->title }}</a>
                 </li>
-                @endforeach
+                @endfor
             </ul>
         </div>
     </div>

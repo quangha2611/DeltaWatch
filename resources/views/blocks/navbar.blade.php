@@ -45,7 +45,7 @@
                                 <ul class="sub-menu-2">
                                     @foreach($brand->products as $key => $product)
                                         @if ($key <= 3)
-                                            <li><a href="#" title="{{ $product->po_name }}">{{ $product->po_name }}</a></li>
+                                            <li><a href="{{ route("get.product.show", $product->id) }}" title="{{ $product->po_name }}">{{ $product->po_name }}</a></li>
                                         @endif
                                     @endforeach
                                 </ul>

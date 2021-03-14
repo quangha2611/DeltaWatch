@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -27,6 +28,9 @@ class MyPostSeeder extends Seeder
             );
         foreach ($posts as $post) {
             $post['slug'] = Str::slug($post['title'], '-');
+            $post['created_at'] = Carbon::now()->format('Y-m-d H:i:s');
+            $post['updated_at'] = Carbon::now()->format('Y-m-d H:i:s');
+
             DB::table('posts')->insert($post);
         }
     }
