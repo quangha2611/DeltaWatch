@@ -782,7 +782,7 @@ html {
 .content-top .list-category ul .menu-item {
   border-bottom: 1px solid #ebebeb;
   position: relative;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0.5rem 2rem;
 }
 .content-top .list-category ul .menu-item i.fa-minus {
   display: none;
@@ -796,16 +796,14 @@ html {
 }
 .content-top .list-category ul .menu-item a {
   font-size: 14px;
-  padding-left: 1.5rem;
   position: relative;
   color: #000;
-  margin-left: 1rem;
 }
 .content-top .list-category ul .menu-item a::before {
   content: "";
   display: block;
   position: absolute;
-  left: 0;
+  left: -20px;
   top: 0;
   width: 17px;
   height: 17px;

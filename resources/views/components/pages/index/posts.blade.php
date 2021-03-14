@@ -12,18 +12,18 @@
 
     <div class="container mt-5">
         <div class="row justify-content-between">
-            @foreach ($posts as $post)
+            @for ($i = 0; $i < 4; $i++)
                 <div class="knowledge_item">
                     <div class="tag-date">25/11/2019</div>
                     <div class="knowledge_item_img">
-                        <img src="{{ asset('images/posts/post' . $post->image .'.jpg') }}" alt="" width="100%">
+                        <img src="{{ asset('images/posts/post' . $posts[$i]->id .'.jpg') }}" alt="" width="100%">
                     </div>
                     <div class="knowledge_item_des">
-                        <p class="des_author">Đăng bởi: {{ $post->author->name }}</p>
-                        <a href="#" title="Đồng hồ thông minh Apple Watch mới ra mắt">{{ $post->title }}</a>
+                        <p class="des_author">Đăng bởi: {{ $posts[$i]->author->name }}</p>
+                        <a href="#" title="Đồng hồ thông minh Apple Watch mới ra mắt">{{ $posts[$i]->title }}</a>
                     </div>
                 </div>
-            @endforeach
+            @endfor
         </div>
     </div>
 </div>

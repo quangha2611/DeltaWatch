@@ -29,7 +29,7 @@
                             </div>
                             <div class="item_info">
                                 <a href="{{ route('get.product.show', $product->id) }}" class="item_info_name">{{ $product->po_name }}</a>
-                                <p class="item_info_price">{{ $product->po_price }}</p>
+                                <p class="item_info_price">@php echo number_format($product->po_price, 0, '', '.') . 'đ'; @endphp</p>
                             </div>
                         </div>
                         @endforeach

@@ -10,28 +10,42 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index ()
     {
-        $products = Product::limit(12)->get();
+        $products   = Product::limit(12)->get();
         $categories = Category::limit(4)->get();
-        $brands = Brand::limit(5)->get();
-        $viewData = [
-            'products' => $products,
+        $brands     = Brand::limit(5)->get();
+        $viewData   = [
+            'products'   => $products,
             'categories' => $categories,
-            'brands' => $brands,
+            'brands'     => $brands,
         ];
         return view('pages.product')->with($viewData);
     }
 
-    public function show($id) {
-        $product = Product::findOrFail($id);
-        $posts = Post::limit(4)->get();
+    public function show ($id)
+    {
+        $product         = Product::findOrFail($id);
+        $posts           = Post::limit(4)->get();
         $relatedProducts = Product::limit(12)->get();
-        $viewData = [
-            'product' => $product,
-            'posts' => $posts,
+        $viewData        = [
+            'product'         => $product,
+            'posts'           => $posts,
             'relatedProducts' => $relatedProducts,
         ];
         return view('pages.product_detail')->with($viewData);
+    }
+
+    public function getRelatedProductAjax ($id)
+    {
+        $product        = Product::findOrFail($id);
+        $relatedProduct = Product::where('po_category', $product->po_category)
+                                ->whereNotIn('id', [$id])
+                                ->get();
+        $viewData = [
+            'product' => $product,
+            'relatedProduct' => $relatedProduct,
+        ];
+        return $viewData;
     }
 }

@@ -21,7 +21,7 @@
         <div class="content_main-right col-xl-6 col-lg-6 col-sm-12 pr-0">
             <form method="post">
                 <h1 class="title-product">{{ $product->po_name }}</h1>
-                <p class="price-product">{{ $product->po_price }}</p>
+                <p class="price-product">@php echo number_format($product->po_price, 0, '', '.') . 'đ'; @endphp</p>
                 <p class="des-product">
                 {{ $product->po_description }}
                 <div class="option-size">

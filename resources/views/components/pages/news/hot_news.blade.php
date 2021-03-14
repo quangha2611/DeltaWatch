@@ -4,11 +4,11 @@
             <div class="post-big col-xl-6 col-lg-6 col-sm-6 pl-0">
                 <div class="tag-date">25/11/2019</div>
                 <div class="post-big_img">
-                    <img src="{{ asset('images/posts/post.jpg') }}" alt="" width="100%">
+                    <img src="{{ asset('images/posts/post'. $posts[0]->id .'.jpg') }}" alt="" width="100%">
                 </div>
                 <div class="post-big_des">
-                    <p class="des_author">Đăng bởi: Đào Thị Uyên</p>
-                    <a href="#" title="Đồng hồ thông minh Apple Watch mới ra mắt">Đồng hồ thông minh Apple Watch mới ra mắt</a>
+                    <p class="des_author">Người đăng: {{ $posts[0]->author->name }}</p>
+                    <a href="#" title="{{ $posts[0]->title }}">{{ $posts[0]->title }}</a>
                 </div>
             </div>
             <div class="post-thumbnail col-xl-6 col-lg-6 col-sm-6">
@@ -16,18 +16,15 @@
                     <div class="post-big col-xl-5 col-lg-5 col-sm-4 col-4 pl-0 pr-0">
                         <div class="tag-date">25/11/2019</div>
                         <div class="post-big_img">
-                            <img src="{{ asset('images/posts/post.jpg') }}" alt="" width="100%">
+                            <img src="{{ asset('images/posts/post'. $posts[1]->id .'.jpg') }}" alt="" width="100%">
                         </div>
                     </div>
-                    <h5 class="col-xl-7 col-lg-7 col-sm-8 col-8 pr-0">Đồng hồ Apple Watch chính hãng bán ra tại VN</h5>
+                    <h5 class="col-xl-7 col-lg-7 col-sm-8 col-8 pr-0">{{ $posts[2]->title }}</h5>
                 </div>
                 <ul class="lis-post">
-                    <li><a href="#">Thị trường smartwatch: khi Fitbit và Google động thủ</a></li>
-                    <li><a href="#">Đồng hồ thông minh nào nâng cấp Android Wear 2.0</a></li>
-                    <li><a href="#">Đức cấm đồng hồ thông minh cho trẻ em</a></li>
-                    <li><a href="#">Thiết bị đeo tay thông minh cảnh báo tiểu đường đúng tới 85%</a></li>
-                    <li><a href="#">Đồng hồ thông minh biến cánh tay thành màn hình cảm ứng</a></li>
-                    <li><a href="#">Google có thể ra mắt đồng hồ thông minh vào cuối năm nay</a></li>
+                    @for ($i = 0; $i < 6; $i++)
+                        <li><a href="#">{{ $posts[$i]->title }}</a></li>
+                    @endfor
                 </ul>
             </div>
         </div>
@@ -39,24 +36,11 @@
                 Danh mục tin
             </div>
             <ul class="">
+                @foreach ($posts as $post)
                 <li class="menu-item">
-                    <a href="#">Trang chủ</a>
+                    <a href="#">{{ $post->title }}</a>
                 </li>
-                <li class="menu-item">
-                    <a href="#">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Trang chủ</a>
-                </li>
+                @endforeach
             </ul>
         </div>
     </div>
