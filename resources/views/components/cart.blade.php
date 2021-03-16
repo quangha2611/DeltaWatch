@@ -1,4 +1,4 @@
-<span><i class="fas fa-shopping-basket"></i> Giỏ hàng ({{ count($cartItems) }})</span>
+<span><i class="fas fa-shopping-basket"></i> Giỏ hàng ({{ count($cartItems ?? []) }})</span>
 <ul class="cart header_sub-menu">
     @foreach ($cartItems ?? [] as $item)
         <li class="cart_item">
