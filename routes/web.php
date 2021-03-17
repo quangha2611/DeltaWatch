@@ -45,3 +45,7 @@ Route::get('cart', 'CartController@index')->name('get.cart.index');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::prefix('ajax')->group (function() {
+    Route::get('brand/{id}', 'HomeController@getAjaxBrand')->name('get.ajax.brand');
+} );

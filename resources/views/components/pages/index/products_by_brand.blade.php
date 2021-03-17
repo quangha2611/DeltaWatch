@@ -8,7 +8,7 @@
         </div>
         <div class="list-brand row">
             @foreach ($brands as $key => $brand)
-                <div class="brand_item">
+                <div class="brand_item" value="{{ $brand->id }}">
                     <div class="brand_item_image">
                         <img src="{{ asset('images/brands/brand' . $key .'.png') }}" alt="" class="animation3d">
                     </div>
@@ -39,7 +39,7 @@
                     <a href="{{ route('get.product.show', 1) }}" class="item_info_name">Ten san pham</a>
                     <p class="item_info_price">1.000.000₫</p>
                 </div>
-            </div>
+                </div>
             @endfor
         </div>
     </div>

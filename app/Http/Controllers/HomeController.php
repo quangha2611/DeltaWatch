@@ -28,4 +28,9 @@ class HomeController extends Controller
 
         return view('pages.index')->with($viewData);
     }
+
+    public function getAjaxBrand ($id) {
+        $brand = Brand::with('products')->findOrFail($id);
+        return response()->json($brand);
+    }
 }
