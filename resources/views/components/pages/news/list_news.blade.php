@@ -3,7 +3,7 @@
         @foreach ($posts as $post)
             <div class="row post_item">
             <div class="post-big col-xl-4 col-lg-4 col-sm-4 col-4 pl-0">
-                <div class="tag-date">{{ date_format($post->created_at, "d/m/Y") }}</div>
+                <div class="tag-date">{{ date_format($posts[0]->created_at, "d/m/Y") }}</div>
                 <div class="post-big_img">
                     <img src="{{ asset('images/posts/post' . $post->id . '.jpg') }}" alt="" width="100%">
                 </div>

@@ -36,24 +36,11 @@
                 Danh mục tin
             </div>
             <ul class="">
+                @for ($i = 0; $i < 4; $i++)
                 <li class="menu-item">
-                    <a href="#">Trang chủ</a>
+                    <a href="#">{{ $posts[$i]->title }}</a>
                 </li>
-                <li class="menu-item">
-                    <a href="#">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Trang chủ</a>
-                </li>
+                @endfor
             </ul>
         </div>
     </div>

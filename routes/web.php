@@ -47,3 +47,7 @@ Route::prefix('products')->group(function () {
         Voyager::routes();
     });
 });
+
+Route::prefix('ajax')->group (function() {
+    Route::get('brand/{id}', 'HomeController@getAjaxBrand')->name('get.ajax.brand');
+} );
