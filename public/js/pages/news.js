@@ -13114,6 +13114,42 @@ return jQuery;
 
 /***/ }),
 
+/***/ "./resources/js/components/add_to_cart.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/add_to_cart.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {var ADD_TO_CART = {
+  init: function init() {
+    this.addToCart();
+  },
+  addToCart: function addToCart() {
+    $('.content').on('click', '.js-add-to-cart', function () {
+      var id = $(this).data('item');
+      var route = $(this).data('route');
+      $.ajax({
+        url: route,
+        type: 'GET',
+        dataType: 'html',
+        data: {
+          id: id
+        }
+      }).done(function (res) {
+        alert('Thêm vào giỏ hàng thành công!');
+        $('#cart').html(res);
+      });
+    });
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (ADD_TO_CART);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/src/jquery.js")))
+
+/***/ }),
+
 /***/ "./resources/js/components/back_to_top.js":
 /*!************************************************!*\
   !*** ./resources/js/components/back_to_top.js ***!
@@ -13159,10 +13195,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {var HEADER = {
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add_to_cart */ "./resources/js/components/add_to_cart.js");
+
+var HEADER = {
   init: function init() {
+    _add_to_cart__WEBPACK_IMPORTED_MODULE_0__["default"].init();
     this.showMobileMenu();
     this.renderButtonInMobileMenu();
+    this.updateCart();
   },
   showMobileMenu: function showMobileMenu() {
     $('#show_mobile_menu').click(function () {
@@ -13200,6 +13240,27 @@ __webpack_require__.r(__webpack_exports__);
         itemHasSubMenus[this.index].classList.remove('has-sub-menu-active');
       });
     }
+  },
+  updateCart: function updateCart() {
+    $('.cart_item_info').on('click', '.increase_quantity', function () {
+      var price = $(this).parents('.cart_item_info').data('price');
+      var old_quantity = $(this).parents('.quantity').find('.count_quantity').val();
+      $(this).parents('.quantity').find('.count_quantity').val(parseInt(old_quantity) + 1);
+      var total_money = price * (parseInt(old_quantity) + 1);
+      $(this).parents('.cart_item').find('.price').text(Intl.NumberFormat('de-DE').format(total_money));
+    });
+    $('.cart_item_info').on('click', '.reduce_quantity', function () {
+      var price = $(this).parents('.cart_item_info').data('price');
+      var old_quantity = $(this).parents('.quantity').find('.count_quantity').val();
+
+      if (old_quantity == 1) {
+        $(this).parents('.cart_item').remove();
+      } else {
+        $(this).parents('.quantity').find('.count_quantity').val(parseInt(old_quantity) - 1);
+        var total_money = price * (parseInt(old_quantity) - 1);
+        $(this).parents('.cart_item').find('.price').text(Intl.NumberFormat('de-DE').format(total_money));
+      }
+    });
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (HEADER);
@@ -13240,7 +13301,7 @@ $(window).on('load', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/js/pages/news.js */"./resources/js/pages/news.js");
+module.exports = __webpack_require__(/*! /home/quangha/Documents/Work/DeltaWatch/resources/js/pages/news.js */"./resources/js/pages/news.js");
 
 
 /***/ })

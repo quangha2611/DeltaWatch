@@ -1,7 +1,7 @@
 import HEADER from "../components/header";
 import BACKTOTOP from "../components/back_to_top";
 
-const PRODUCT_DETAIL = {
+const SIGN_UP = {
     init() {
         HEADER.init();
         BACKTOTOP.init();
@@ -9,5 +9,5 @@ const PRODUCT_DETAIL = {
 };
 
 $(window).on("load", function() {
-    PRODUCT_DETAIL.init();
+    SIGN_UP.init();
 });

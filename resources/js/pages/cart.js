@@ -1,14 +1,59 @@
 import HEADER from "../components/header";
 import BACKTOTOP from "../components/back_to_top";
 
-const INDEX = {
+const CART = {
     init() {
         HEADER.init();
         BACKTOTOP.init();
+        this.updateCart();
+        this.deleteProductFromCart();
+    },
+
+    updateCart()
+    {
+        $('.item_quantity').on('click', '.more-product', function () {
+            var price = $(this).parents('.cart_item').data('price');
+            var old_quantity = $(this).parents('.quantity').find('.product-quantity').val();
+            $(this).parents('.quantity').find('.product-quantity').val( parseInt(old_quantity) + 1);
+            var total_money = price * (parseInt(old_quantity) + 1);
+            $(this).parents('.cart_item').find('.item_total-price > .price').text( Intl.NumberFormat('de-DE').format(total_money) );
+            CART.updateTotalMoneyCart();
+        });
+
+        $('.item_quantity').on('click', '.reduce-product', function () {
+            var price = $(this).parents('.cart_item').data('price');
+            var old_quantity = $(this).parents('.quantity').find('.product-quantity').val();
+            if (old_quantity == 1) {
+                $(this).parents('.cart_item').remove();
+            } else {
+                $(this).parents('.quantity').find('.product-quantity').val( parseInt(old_quantity) - 1);
+                var total_money = price * (parseInt(old_quantity) - 1);
+                $(this).parents('.cart_item').find('.item_total-price > .price').text( Intl.NumberFormat('de-DE').format(total_money) );
+            }
+            CART.updateTotalMoneyCart();
+        });
+    },
+
+    updateTotalMoneyCart()
+    {
+        var totalMoney = 0;
+        $('.cart_list .cart_item').each(function () {
+            console.log( parseInt( $(this).data('price') ) );
+            totalMoney+= parseInt( $(this).data('price') ) * parseInt( $(this).find('.product-quantity').val() );
+        });
+        $('#total-money-cart').text(Intl.NumberFormat('de-DE').format(totalMoney))
+    },
+
+    deleteProductFromCart()
+    {
+        $('.cart_item').on('click', '.item_cancel', function () {
+            $(this).parents('.cart_item').remove();
+            CART.updateTotalMoneyCart();
+        })
     },
 
 };
 
 $(window).on("load", function() {
-    INDEX.init();
+    CART.init();
 });

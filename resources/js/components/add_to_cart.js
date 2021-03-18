@@ -1,0 +1,26 @@
+const ADD_TO_CART = {
+    init () {
+        this.addToCart();
+    },
+
+    addToCart()
+    {
+        $('.content').on('click', '.js-add-to-cart', function () {
+            var id = $(this).data('item');
+            var route = $(this).data('route');
+            $.ajax({
+                url: route,
+                type: 'GET',
+                dataType: 'html',
+                data: {
+                    id: id,
+                }
+            }).done(function(res) {
+                alert('Thêm vào giỏ hàng thành công!');
+                $('#cart').html(res);
+            });
+        })
+    }
+}
+
+export default ADD_TO_CART;

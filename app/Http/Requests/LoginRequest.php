@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class LoginRequest extends FormRequest
 {
-    public function rules(Request $request)
+    public function rules()
     {
         return [
             'email' =>'required|email',

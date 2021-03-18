@@ -1,7 +1,7 @@
 import HEADER from "../components/header";
 import BACKTOTOP from "../components/back_to_top";
 
-const PRODUCT_DETAIL = {
+const LOGIN = {
     init() {
         HEADER.init();
         BACKTOTOP.init();
@@ -10,5 +10,5 @@ const PRODUCT_DETAIL = {
 };
 
 $(window).on("load", function() {
-    PRODUCT_DETAIL.init();
+    LOGIN.init();
 });
