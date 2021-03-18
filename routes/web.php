@@ -49,5 +49,5 @@ Route::prefix('products')->group(function () {
 });
 
 Route::prefix('ajax')->group (function() {
-    Route::get('brand/{id}', 'HomeController@getAjaxBrand')->name('get.ajax.brand');
+    Route::get('brand/{id}', 'HomeController@getAjaxProductsByBrand')->name('get.ajax.brand');
 } );

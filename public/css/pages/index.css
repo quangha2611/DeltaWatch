@@ -1289,6 +1289,13 @@ html {
 .product-by-brand .brand_item:hover .brand_item_name p {
   color: #05c3ff;
 }
+.product-by-brand .brand_item.active .brand_item_image .animation3d {
+  -webkit-animation: animation3d 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1;
+          animation: animation3d 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1;
+}
+.product-by-brand .brand_item.active .brand_item_name p {
+  color: #05c3ff;
+}
 .product-by-brand .brand_item_image {
   margin-bottom: 0.5rem;
   display: flex;

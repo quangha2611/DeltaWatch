@@ -16,6 +16,7 @@ class HomeController extends Controller
         $womanProducts = Product::where('po_gender', 'female')->get();
         $bestProducts  = Product::where('po_hot', 1)->get();
         $posts         = Post::with("author")->get();
+        $appleWatchProducts = Product::where('po_brand', 1)->get();
 
         $viewData = [
             'brands'        => $brands,
@@ -24,13 +25,14 @@ class HomeController extends Controller
             'womanProducts' => $womanProducts,
             'bestProducts'  => $bestProducts,
             'posts'         => $posts,
+            'appleWatchProducts' => $appleWatchProducts,
         ];
 
         return view('pages.index')->with($viewData);
     }
 
-    public function getAjaxBrand ($id) {
+    public function getAjaxProductsByBrand ($id) {
         $brand = Brand::with('products')->findOrFail($id);
-        return response()->json($brand);
+        return view('components.pages.index.product_by_brand_item')->with('products', $brand->products);
     }
 }

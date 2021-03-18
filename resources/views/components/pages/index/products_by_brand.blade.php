@@ -8,7 +8,7 @@
         </div>
         <div class="list-brand row">
             @foreach ($brands as $key => $brand)
-                <div class="brand_item" value="{{ $brand->id }}">
+                <div class="brand_item" data-route="{{ route('get.ajax.brand', $brand->id )}}">
                     <div class="brand_item_image">
                         <img src="{{ asset('images/brands/brand' . $key .'.png') }}" alt="" class="animation3d">
                     </div>
@@ -18,29 +18,29 @@
                 </div>
             @endforeach
         </div>
-        <div class="list-product-by-brand row">
-            @for ($i=1; $i<=8; $i++)
+        <div class="list-product-by-brand row" >
+            @foreach ($appleWatchProducts as $product)
                 <div class="new-product_item">
-                <div class="item_image">
-                    <img src="{{ asset('images/products/product0.jpg') }}" width="90%" alt="">
-                    <div class="item_image_mask">
-                        <div class="animation3d">
-                            <div>
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                            <div class="js-add-to-cart">
-                                <i class="fas fa-shopping-basket iconcart"></i>
+                    <div class="item_image">
+                        <img src="{{ asset('images/products/product' . $product->id . '.jpg') }}" width="90%" alt="">
+                        <div class="item_image_mask">
+                            <div class="animation3d">
+                                <div>
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                                <div class="js-add-to-cart">
+                                    <i class="fas fa-shopping-basket iconcart"></i>
+                                </div>
                             </div>
                         </div>
+                        <img src="{{ asset('images/icons/options.png') }}" alt="" class="item_image_option">
                     </div>
-                    <img src="{{ asset('images/icons/options.png') }}" alt="" class="item_image_option">
+                    <div class="item_info">
+                        <a href="{{ route('get.product.show', 1) }}" class="item_info_name">{{ $product->po_name }}</a>
+                        <p class="item_info_price">@php echo number_format($product->po_price, 0, '', '.') . 'đ'; @endphp₫</p>
+                    </div>
                 </div>
-                <div class="item_info">
-                    <a href="{{ route('get.product.show', 1) }}" class="item_info_name">Ten san pham</a>
-                    <p class="item_info_price">1.000.000₫</p>
-                </div>
-                </div>
-            @endfor
+            @endforeach
         </div>
     </div>
 </div>

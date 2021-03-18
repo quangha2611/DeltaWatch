@@ -135,60 +135,24 @@ const INDEX = {
             document.querySelector('.modal-show-product').classList.remove('modal-show-product-active');
         });
     },
-    // getAjaxBrands() {
-    //     document.querySelectorAll('.brand_item').addEventListener('click', function () {
-    //         $.ajax({
-    //             url: 'http://127.0.0.1:8000/ajax/brands',
-    //             error: function() {
-    //                 console.log('error');
-    //             },
-    //             success: function(data) {
-    //                 $(".list-brand").append(
-    //
-    //                 );
-    //
-    //             },
-    //             type: 'GET'
-    //         });
-    //     });
-    // },
 
     getAjaxBrands() {
         var brands = document.querySelectorAll('.brand_item');
         brands.forEach( function (brand) {
             brand.addEventListener('click', function () {
-                var brandId = brand.getAttribute('value');
+                var route = $(this).data('route');
+                brands.forEach(function (brand) {
+                    $(brand).removeClass('active');
+                });
+                $(brand).toggleClass('active');
                 $.ajax({
-                    url: 'http://127.0.0.1:8000/ajax/brand/' + brandId,
+                    url: route,
                     error: function() {
                         console.log('error');
                     },
                     success: function(data) {
                         $(".list-product-by-brand > div").remove();
-                        data.products.forEach(function (product) {
-                            var string = "";
-                            string += "<div class=\"new-product_item\">\n" +
-                                "                <div class=\"item_image\">\n" +
-                                "                    <img src=\"images/products/product" + product.id + ".jpg\" width=\"90%\" alt=\"\">\n" +
-                                "                    <div class=\"item_image_mask\">\n" +
-                                "                        <div class=\"animation3d\">\n" +
-                                "                            <div>\n" +
-                                "                                <i class=\"fas fa-search-plus\"></i>\n" +
-                                "                            </div>\n" +
-                                "                            <div>\n" +
-                                "                                <i class=\"fas fa-shopping-basket iconcart\"></i>\n" +
-                                "                            </div>\n" +
-                                "                        </div>\n" +
-                                "                    </div>\n" +
-                                "                    <img src=\"images/icons/options.png\" alt=\"\" class=\"item_image_option\">\n" +
-                                "                </div>\n" +
-                                "                <div class=\"item_info\">\n" +
-                                "                    <a href=\"{{ route('get.product.show'," + product.id + ") }}\" class=\"item_info_name\">" + product.po_name + "</a>\n" +
-                                "                    <p class=\"item_info_price\">" + product.po_price.toLocaleString('vi-VN') + "₫</p>\n" +
-                                "                </div>\n" +
-                                "                </div>"
-                            $(".list-product-by-brand").append(string);
-                        });
+                        $(".list-product-by-brand").html(data);
                     },
                     type: 'GET'
                 });
