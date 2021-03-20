@@ -16,7 +16,7 @@
                         <div class="item_image_mask">
                             <div class="animation3d">
                                 <div>
-                                    <i class="fas fa-search-plus"></i>
+                                    <i data-route="{{ route('get.ajax.product', $product->id) }}" class="fas fa-search-plus"></i>
                                 </div>
                                 <div class="js-add-to-cart" data-item="{{ $product->id }}" data-route="{{ route('get.cart.add-to-cart') }}">
                                     <i class="fas fa-shopping-basket iconcart"></i>

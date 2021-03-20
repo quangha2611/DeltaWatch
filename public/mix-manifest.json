@@ -10,6 +10,7 @@
     "/css/pages/login.css": "/css/pages/login.css",
     "/css/pages/sign_up.css": "/css/pages/sign_up.css",
     "/css/pages/cart.css": "/css/pages/cart.css",
+    "/css/pages/search.css": "/css/pages/search.css",
     "/js/pages/about_us.js": "/js/pages/about_us.js",
     "/js/pages/address.js": "/js/pages/address.js",
     "/js/pages/cart.js": "/js/pages/cart.js",
@@ -18,5 +19,6 @@
     "/js/pages/news.js": "/js/pages/news.js",
     "/js/pages/product.js": "/js/pages/product.js",
     "/js/pages/product_detail.js": "/js/pages/product_detail.js",
+    "/js/pages/search.js": "/js/pages/search.js",
     "/js/pages/sign_up.js": "/js/pages/sign_up.js"
 }

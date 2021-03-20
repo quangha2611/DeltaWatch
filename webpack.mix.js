@@ -50,6 +50,10 @@ build_js = [
     {
         from: "resources/js/pages/cart.js",
         to: "public/js/pages"
+    },
+    {
+        from: "resources/js/pages/search.js",
+        to: "public/js/pages"
     }
 ];
 
@@ -89,7 +93,12 @@ build_scss = [
     {
         from: "resources/sass/pages/cart.scss",
         to: "public/css/pages"
-    }
+    },
+    {
+        from: "resources/sass/pages/search.scss",
+        to: "public/css/pages"
+    },
+
 ];
 
 build_js.map(function (file) {

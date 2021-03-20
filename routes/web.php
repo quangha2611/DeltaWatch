@@ -18,8 +18,6 @@ Route::group(['middleware' => ['web']], function () {
 Route::prefix('products')->group(function () {
     Route::get('index', 'ProductController@index')->name('get.product.index');
     Route::get('show/{id}', 'ProductController@show')->name('get.product.show');
-    // test ajax
-    //Route::get('related-product/{id}', 'ProductController@getRelatedProductAjax')->name('get.related-product.data');
 });
 
     Route::prefix('news')->group(function () {
@@ -43,6 +41,8 @@ Route::prefix('products')->group(function () {
     Route::get('cart', 'CartController@index')->middleware('check_customer')->name('get.cart.index');
     Route::get('add-to-cart', 'CartController@addToCart')->name('get.cart.add-to-cart');
 
+    Route::get('search', 'SearchController@index')->name('get.search.index');
+
     Route::group(['prefix' => 'admin'], function () {
         Voyager::routes();
     });
@@ -50,4 +50,5 @@ Route::prefix('products')->group(function () {
 
 Route::prefix('ajax')->group (function() {
     Route::get('brand/{id}', 'HomeController@getAjaxProductsByBrand')->name('get.ajax.brand');
+    Route::get('product/{id}', 'ProductController@getRelatedProductAjax')->name('get.ajax.product');
 } );

@@ -27,6 +27,7 @@ const PRODUCT = {
         var buttonToShowModalProduct = document.querySelectorAll('.animation3d i.fa-search-plus');
         for (var i=0; i<buttonToShowModalProduct.length; i++) {
             buttonToShowModalProduct[i].addEventListener('click', function () {
+
                 document.querySelector('.modal-show-product').classList.add('modal-show-product-active');
                 document.querySelector('.modal-main').addEventListener('click', function () {
                     event.stopPropagation();

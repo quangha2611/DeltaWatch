@@ -19513,6 +19513,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/pages/search.scss":
+/*!******************************************!*\
+  !*** ./resources/sass/pages/search.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/pages/sign_up.scss":
 /*!*******************************************!*\
   !*** ./resources/sass/pages/sign_up.scss ***!
@@ -19525,9 +19536,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/pages/index.scss ./resources/sass/pages/news.scss ./resources/sass/pages/product.scss ./resources/sass/pages/product_detail.scss ./resources/sass/pages/about_us.scss ./resources/sass/pages/address.scss ./resources/sass/pages/login.scss ./resources/sass/pages/sign_up.scss ./resources/sass/pages/cart.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/pages/index.scss ./resources/sass/pages/news.scss ./resources/sass/pages/product.scss ./resources/sass/pages/product_detail.scss ./resources/sass/pages/about_us.scss ./resources/sass/pages/address.scss ./resources/sass/pages/login.scss ./resources/sass/pages/sign_up.scss ./resources/sass/pages/cart.scss ./resources/sass/pages/search.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19541,7 +19552,8 @@ __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/sass/page
 __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/sass/pages/address.scss */"./resources/sass/pages/address.scss");
 __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/sass/pages/login.scss */"./resources/sass/pages/login.scss");
 __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/sass/pages/sign_up.scss */"./resources/sass/pages/sign_up.scss");
-module.exports = __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/sass/pages/cart.scss */"./resources/sass/pages/cart.scss");
+__webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/sass/pages/cart.scss */"./resources/sass/pages/cart.scss");
+module.exports = __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/sass/pages/search.scss */"./resources/sass/pages/search.scss");
 
 
 /***/ })
