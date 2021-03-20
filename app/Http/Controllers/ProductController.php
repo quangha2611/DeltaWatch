@@ -13,12 +13,16 @@ class ProductController extends Controller
     public function index ()
     {
         $products   = Product::limit(12)->get();
+        $relatedProducts   = Product::limit(12)->get();
         $categories = Category::limit(4)->get();
         $brands     = Brand::limit(5)->get();
+        $product    = Product::find(1);
         $viewData   = [
             'products'   => $products,
             'categories' => $categories,
             'brands'     => $brands,
+            'product'    => $product,
+            'relatedProducts' => $relatedProducts,
         ];
         return view('pages.product')->with($viewData);
     }
@@ -43,8 +47,8 @@ class ProductController extends Controller
 //                                ->whereNotIn('id', [$id])
 //                                ->get();
         $relatedProducts = Product::limit(12)->get();
-        $viewData = [
-            'product' => $product,
+        $viewData        = [
+            'product'         => $product,
             'relatedProducts' => $relatedProducts,
         ];
         return view('components.modal_show_product')->with($viewData);

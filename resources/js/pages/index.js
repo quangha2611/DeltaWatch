@@ -117,24 +117,24 @@ const INDEX = {
     },
 
     showModalProduct() {
-        $('.animation3d i.fa-search-plus').click(function () {
-            $.ajax({
-                url: $(this).data('route'),
-                error: function () {
-                    console.log('error');
-                },
-                success: function (data) {
-                    let dataMain = $(data).find('.modal-main');
-                    $(".modal-show-product").html(dataMain);
-                    INDEX.buildSliderModal();
-                },
-                type: 'GET'
+        $('.content').on('click', '.animation3d i.fa-search-plus' ,function () {
+                $.ajax({
+                    url: $(this).data('route'),
+                    error: function () {
+                        console.log('error');
+                    },
+                    success: function (data) {
+                        let dataMain = $(data).find('.modal-main');
+                        $(".modal-show-product").html(dataMain);
+                        INDEX.buildSliderModal();
+                    },
+                    type: 'GET'
+                });
+                $('.modal-show-product').on('click', '.modal-main', function (event) {
+                    event.stopPropagation();
+                });
+                $('.modal-show-product').addClass('modal-show-product-active');
             });
-            $('.modal-show-product').on('click', '.modal-main', function (event) {
-                event.stopPropagation();
-            });
-            $('.modal-show-product').addClass('modal-show-product-active');
-        });
     },
 
     closeModalProduct() {

@@ -13291,7 +13291,7 @@ var PRODUCT = {
     this.openAndCloseDropDownMenu();
     this.openAndCloseDropDownMenuMobile();
   },
-  showModalProduct: function showModalProduct() {
+  buildSliderModal: function buildSliderModal() {
     var swiper = new Swiper('.modal_thumbnail', {
       direction: 'vertical',
       slidesPerView: 4,
@@ -13302,16 +13302,26 @@ var PRODUCT = {
         prevEl: '.modal_thumbnail_slide-prev'
       }
     });
-    var buttonToShowModalProduct = document.querySelectorAll('.animation3d i.fa-search-plus');
-
-    for (var i = 0; i < buttonToShowModalProduct.length; i++) {
-      buttonToShowModalProduct[i].addEventListener('click', function () {
-        document.querySelector('.modal-show-product').classList.add('modal-show-product-active');
-        document.querySelector('.modal-main').addEventListener('click', function () {
-          event.stopPropagation();
-        });
+  },
+  showModalProduct: function showModalProduct() {
+    $('.animation3d i.fa-search-plus').click(function () {
+      $.ajax({
+        url: $(this).data('route'),
+        error: function error() {
+          console.log('error');
+        },
+        success: function success(data) {
+          var dataMain = $(data).find('.modal-main');
+          $(".modal-show-product").html(dataMain);
+          PRODUCT.buildSliderModal();
+        },
+        type: 'GET'
       });
-    }
+      $('.modal-show-product').on('click', '.modal-main', function (event) {
+        event.stopPropagation();
+      });
+      $('.modal-show-product').addClass('modal-show-product-active');
+    });
   },
   closeModalProduct: function closeModalProduct() {
     document.querySelector('.modal-show-product').addEventListener('click', function () {
@@ -13375,7 +13385,7 @@ $(window).on('load', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/quangha/Documents/Work/DeltaWatch/resources/js/pages/product.js */"./resources/js/pages/product.js");
+module.exports = __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/js/pages/product.js */"./resources/js/pages/product.js");
 
 
 /***/ })

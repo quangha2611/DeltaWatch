@@ -53,7 +53,7 @@
                     <div class="item_image_mask">
                         <div class="animation3d">
                             <div>
-                                <i class="fas fa-search-plus"></i>
+                                <i class="fas fa-search-plus" data-route="{{ route('get.ajax.product', $product->id) }}"></i>
                             </div>
                             <div>
                                 <i class="fas fa-shopping-basket iconcart"></i>

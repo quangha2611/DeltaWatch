@@ -8,7 +8,7 @@
         </div>
         <div class="list-brand row">
             @foreach ($brands as $key => $brand)
-                <div class="brand_item" data-route="{{ route('get.ajax.brand', $brand->id )}}">
+                <div class="brand_item @php if($brand->id == 1) echo('active') @endphp" data-route="{{ route('get.ajax.brand', $brand->id )}}">
                     <div class="brand_item_image">
                         <img src="{{ asset('images/brands/brand' . $key .'.png') }}" alt="" class="animation3d">
                     </div>
@@ -26,7 +26,7 @@
                         <div class="item_image_mask">
                             <div class="animation3d">
                                 <div>
-                                    <i class="fas fa-search-plus"></i>
+                                    <i class="fas fa-search-plus" data-route="{{ route('get.ajax.product', $product->id) }}"></i>
                                 </div>
                                 <div class="js-add-to-cart">
                                     <i class="fas fa-shopping-basket iconcart"></i>
