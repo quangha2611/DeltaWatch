@@ -32,6 +32,7 @@
     </div>
 
     @include('components.modal_show_product')
+
 @endsection
 
 @section('script')

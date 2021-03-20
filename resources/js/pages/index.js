@@ -2,7 +2,7 @@ import HEADER from "../components/header";
 import BACKTOTOP from "../components/back_to_top";
 
 const INDEX = {
-    init () {
+    init() {
         HEADER.init();
         BACKTOTOP.init();
 
@@ -104,24 +104,37 @@ const INDEX = {
     },
 
     showModalProduct() {
-        var swiper = new Swiper('.modal_thumbnail', {
-            direction: 'vertical',
-            slidesPerView: 4,
-            spaceBetween: 5,
-            slidesPerGroup: 2,
-            navigation: {
-                nextEl: '.modal_thumbnail_slide-next',
-                prevEl: '.modal_thumbnail_slide-prev',
-            },
-        })
 
         var buttonToShowModalProduct = document.querySelectorAll('.animation3d i.fa-search-plus');
-        for (var i=0; i<buttonToShowModalProduct.length; i++) {
+        for (var i = 0; i < buttonToShowModalProduct.length; i++) {
             buttonToShowModalProduct[i].addEventListener('click', function () {
-                document.querySelector('.modal-show-product').classList.add('modal-show-product-active');
-                document.querySelector('.modal-main').addEventListener('click', function () {
-                    event.stopPropagation();
-                })
+
+                $.ajax({
+                    url: $(this).data('route'),
+                    error: function () {
+                        console.log('error');
+                    },
+                    success: function (data) {
+                        $(".content + div").remove();
+                        $(".content").after(data);
+                        var swiper = new Swiper('.modal_thumbnail', {
+                            direction: 'vertical',
+                            slidesPerView: 4,
+                            spaceBetween: 5,
+                            slidesPerGroup: 2,
+                            navigation: {
+                                nextEl: '.modal_thumbnail_slide-next',
+                                prevEl: '.modal_thumbnail_slide-prev',
+                            },
+                        })
+                        document.querySelector('.modal-show-product').classList.add('modal-show-product-active');
+                        document.querySelector('.modal-main').addEventListener('click', function () {
+                            event.stopPropagation();
+                        });
+                    },
+                    type: 'GET'
+                });
+
             });
         }
     },
@@ -138,7 +151,7 @@ const INDEX = {
 
     getAjaxBrands() {
         var brands = document.querySelectorAll('.brand_item');
-        brands.forEach( function (brand) {
+        brands.forEach(function (brand) {
             brand.addEventListener('click', function () {
                 var route = $(this).data('route');
                 brands.forEach(function (brand) {
@@ -146,11 +159,11 @@ const INDEX = {
                 });
                 $(brand).toggleClass('active');
                 $.ajax({
-                    url: route,
-                    error: function() {
+                    url: $(this).data('route'),
+                    error: function () {
                         console.log('error');
                     },
-                    success: function(data) {
+                    success: function (data) {
                         $(".list-product-by-brand > div").remove();
                         $(".list-product-by-brand").html(data);
                     },
@@ -162,6 +175,6 @@ const INDEX = {
 
 }
 
-$(window).on('load', function() {
+$(window).on('load', function () {
     INDEX.init();
 });

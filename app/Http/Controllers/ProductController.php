@@ -38,14 +38,15 @@ class ProductController extends Controller
 
     public function getRelatedProductAjax ($id)
     {
-        $product        = Product::findOrFail($id);
-        $relatedProduct = Product::where('po_category', $product->po_category)
-                                ->whereNotIn('id', [$id])
-                                ->get();
+        $product = Product::findOrFail($id);
+//        $relatedProduct = Product::where('po_category', $product->po_category)
+//                                ->whereNotIn('id', [$id])
+//                                ->get();
+        $relatedProducts = Product::limit(12)->get();
         $viewData = [
             'product' => $product,
-            'relatedProduct' => $relatedProduct,
+            'relatedProducts' => $relatedProducts,
         ];
-        return $viewData;
+        return view('components.modal_show_product')->with($viewData);
     }
 }

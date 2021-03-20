@@ -31,8 +31,8 @@
             <div class="header_search">
                 <ul>
                     <li>
-                        <form>
-                            <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                        <form action="{{ route('get.search.index') }}">
+                            <input class="search" name="search" type="text" class="form-control" placeholder="Tìm kiếm...">
                             <button type="submit"><i class="fa fa-search"></i> </button>
                         </form>
                         <span><i class="fa fa-search"></i> Tìm kiếm</span>

@@ -13373,23 +13373,34 @@ var INDEX = {
     });
   },
   showModalProduct: function showModalProduct() {
-    var swiper = new Swiper('.modal_thumbnail', {
-      direction: 'vertical',
-      slidesPerView: 4,
-      spaceBetween: 5,
-      slidesPerGroup: 2,
-      navigation: {
-        nextEl: '.modal_thumbnail_slide-next',
-        prevEl: '.modal_thumbnail_slide-prev'
-      }
-    });
     var buttonToShowModalProduct = document.querySelectorAll('.animation3d i.fa-search-plus');
 
     for (var i = 0; i < buttonToShowModalProduct.length; i++) {
       buttonToShowModalProduct[i].addEventListener('click', function () {
-        document.querySelector('.modal-show-product').classList.add('modal-show-product-active');
-        document.querySelector('.modal-main').addEventListener('click', function () {
-          event.stopPropagation();
+        $.ajax({
+          url: $(this).data('route'),
+          error: function error() {
+            console.log('error');
+          },
+          success: function success(data) {
+            $(".content + div").remove();
+            $(".content").after(data);
+            var swiper = new Swiper('.modal_thumbnail', {
+              direction: 'vertical',
+              slidesPerView: 4,
+              spaceBetween: 5,
+              slidesPerGroup: 2,
+              navigation: {
+                nextEl: '.modal_thumbnail_slide-next',
+                prevEl: '.modal_thumbnail_slide-prev'
+              }
+            });
+            document.querySelector('.modal-show-product').classList.add('modal-show-product-active');
+            document.querySelector('.modal-main').addEventListener('click', function () {
+              event.stopPropagation();
+            });
+          },
+          type: 'GET'
         });
       });
     }
@@ -13412,7 +13423,7 @@ var INDEX = {
         });
         $(brand).toggleClass('active');
         $.ajax({
-          url: route,
+          url: $(this).data('route'),
           error: function error() {
             console.log('error');
           },

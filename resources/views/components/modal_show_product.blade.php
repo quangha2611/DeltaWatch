@@ -2,15 +2,15 @@
 <div class="modal-show-product">
     <div class="modal-main row">
         <div class="modal_big-pic">
-            <img src="{{ asset('images/products/product0.jpg') }}" alt="" width="100%">
+            <img src="{{ asset('images/products/product' . $product->id . '.jpg') }}" alt="" width="100%">
         </div>
         <div class="modal_thumbnail swiper-container">
             <div class="swiper-wrapper">
-                @for($i=1; $i<=8; $i++)
+                @foreach ($relatedProducts as $product)
                     <div class="swiper-slide modal_thumbnail_item">
-                        <img src="{{ asset('images/products/product0.jpg') }}" alt="" width="100%">
+                        <img src="{{ asset('images/products/product' . $product->id . '.jpg') }}" alt="" width="100%">
                     </div>
-                @endfor
+                @endforeach
             </div>
             <!-- Add Arrows -->
             <div class="swiper-button-next modal_thumbnail_slide-next">
@@ -55,7 +55,8 @@
                         </button>
                         <input type="number" name="quantity" id="quantity" value="1">
                         <button type="button" onclick="if (document.getElementById('quantity').value < 100 ) {
-                                            document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) + 1 }"><i class="fas fa-plus-circle"></i></button>
+                                            document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) + 1 }">
+                            <i class="fas fa-plus-circle"></i></button>
                     </div>
                     <div>
                         <button class="add-to-cart">
