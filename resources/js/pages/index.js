@@ -103,50 +103,48 @@ const INDEX = {
         });
     },
 
+    buildSliderModal() {
+        var swiper = new Swiper('.modal_thumbnail', {
+            direction: 'vertical',
+            slidesPerView: 4,
+            spaceBetween: 5,
+            slidesPerGroup: 2,
+            navigation: {
+                nextEl: '.modal_thumbnail_slide-next',
+                prevEl: '.modal_thumbnail_slide-prev',
+            },
+        })
+    },
+
     showModalProduct() {
-
-        var buttonToShowModalProduct = document.querySelectorAll('.animation3d i.fa-search-plus');
-        for (var i = 0; i < buttonToShowModalProduct.length; i++) {
-            buttonToShowModalProduct[i].addEventListener('click', function () {
-
-                $.ajax({
-                    url: $(this).data('route'),
-                    error: function () {
-                        console.log('error');
-                    },
-                    success: function (data) {
-                        $(".content + div").remove();
-                        $(".content").after(data);
-                        var swiper = new Swiper('.modal_thumbnail', {
-                            direction: 'vertical',
-                            slidesPerView: 4,
-                            spaceBetween: 5,
-                            slidesPerGroup: 2,
-                            navigation: {
-                                nextEl: '.modal_thumbnail_slide-next',
-                                prevEl: '.modal_thumbnail_slide-prev',
-                            },
-                        })
-                        document.querySelector('.modal-show-product').classList.add('modal-show-product-active');
-                        document.querySelector('.modal-main').addEventListener('click', function () {
-                            event.stopPropagation();
-                        });
-                    },
-                    type: 'GET'
-                });
-
+        $('.animation3d i.fa-search-plus').click(function () {
+            $.ajax({
+                url: $(this).data('route'),
+                error: function () {
+                    console.log('error');
+                },
+                success: function (data) {
+                    let dataMain = $(data).find('.modal-main');
+                    $(".modal-show-product").html(dataMain);
+                    INDEX.buildSliderModal();
+                },
+                type: 'GET'
             });
-        }
+            $('.modal-show-product').on('click', '.modal-main', function (event) {
+                event.stopPropagation();
+            });
+            $('.modal-show-product').addClass('modal-show-product-active');
+        });
     },
 
     closeModalProduct() {
-        document.querySelector('.modal-show-product').addEventListener('click', function () {
-            this.classList.remove('modal-show-product-active');
+        $('.modal-show-product').click(function () {
+            $(this).removeClass('modal-show-product-active');
         });
 
-        $('.close-modal-product').click(function () {
-            document.querySelector('.modal-show-product').classList.remove('modal-show-product-active');
-        });
+        $('.modal-show-product').on('click', '.close-modal-product', function () {
+            $('.modal-show-product').removeClass('modal-show-product-active');
+        })
     },
 
     getAjaxBrands() {

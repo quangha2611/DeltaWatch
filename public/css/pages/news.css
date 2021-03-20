@@ -1233,7 +1233,7 @@ html {
   display: flex;
   justify-content: center;
   align-self: start;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .modal-show-product .modal-main {
   background-color: #fff;

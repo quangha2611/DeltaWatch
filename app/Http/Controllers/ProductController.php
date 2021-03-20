@@ -36,7 +36,7 @@ class ProductController extends Controller
         return view('pages.product_detail')->with($viewData);
     }
 
-    public function getRelatedProductAjax ($id)
+    public function getAjaxRelatedProduct ($id)
     {
         $product = Product::findOrFail($id);
 //        $relatedProduct = Product::where('po_category', $product->po_category)
