@@ -49,7 +49,7 @@
         @foreach ($products as $product)
             <div class="product_item">
                 <div class="item_image">
-                    <img src="{{ asset('images/products/product' . $product->id . '.jpg') }}" width="90%" alt="">
+                    <img src="{{ asset('storage/' . $product->po_image) }}" width="90%" alt="">
                     <div class="item_image_mask">
                         <div class="animation3d">
                             <div>

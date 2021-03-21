@@ -16,7 +16,7 @@ class ProductController extends Controller
         $relatedProducts   = Product::limit(12)->get();
         $categories = Category::limit(4)->get();
         $brands     = Brand::limit(5)->get();
-        $product    = Product::find(1);
+        $product    = Product::first();
         $viewData   = [
             'products'   => $products,
             'categories' => $categories,

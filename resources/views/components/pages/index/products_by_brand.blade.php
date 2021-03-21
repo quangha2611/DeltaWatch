@@ -10,7 +10,7 @@
             @foreach ($brands as $key => $brand)
                 <div class="brand_item @php if($brand->id == 1) echo('active') @endphp" data-route="{{ route('get.ajax.brand', $brand->id )}}">
                     <div class="brand_item_image">
-                        <img src="{{ asset('images/brands/brand' . $key .'.png') }}" alt="" class="animation3d">
+                        <img src="{{ asset('storage/' . $brand->br_logo) }}" alt="" class="animation3d">
                     </div>
                     <div class="brand_item_name">
                         <p>{{ $brand->br_name }} Watch</p>
@@ -22,7 +22,7 @@
             @foreach ($appleWatchProducts as $product)
                 <div class="new-product_item">
                     <div class="item_image">
-                        <img src="{{ asset('images/products/product' . $product->id . '.jpg') }}" width="90%" alt="">
+                        <img src="{{ asset('storage/' . $product->po_image) }}" width="90%" alt="">
                         <div class="item_image_mask">
                             <div class="animation3d">
                                 <div>
