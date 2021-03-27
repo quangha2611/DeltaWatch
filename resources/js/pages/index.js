@@ -133,6 +133,8 @@ const INDEX = {
             $('.modal-show-product').on('click', '.modal-main', function (event) {
                 event.stopPropagation();
             });
+            $('.modal-show-product').addClass('modal-show-product-active');
+        });
     },
 
     closeModalProduct() {
