@@ -117,7 +117,6 @@ const INDEX = {
     },
 
     showModalProduct() {
-<<<<<<< HEAD
         $('.content').on('click', '.animation3d i.fa-search-plus', function () {
             $.ajax({
                 url: $(this).data('route'),
@@ -133,25 +132,6 @@ const INDEX = {
             });
             $('.modal-show-product').on('click', '.modal-main', function (event) {
                 event.stopPropagation();
-=======
-        $('.content').on('click', '.animation3d i.fa-search-plus' ,function () {
-                $.ajax({
-                    url: $(this).data('route'),
-                    error: function () {
-                        console.log('error');
-                    },
-                    success: function (data) {
-                        let dataMain = $(data).find('.modal-main');
-                        $(".modal-show-product").html(dataMain);
-                        INDEX.buildSliderModal();
-                    },
-                    type: 'GET'
-                });
-                $('.modal-show-product').on('click', '.modal-main', function (event) {
-                    event.stopPropagation();
-                });
-                $('.modal-show-product').addClass('modal-show-product-active');
->>>>>>> 3bdd90aa0b31b4db9635714a88755bc12d5be21a
             });
     },
 
