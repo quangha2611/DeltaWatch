@@ -43,12 +43,14 @@ Route::prefix('products')->group(function () {
 
     Route::get('search', 'SearchController@index')->name('get.search.index');
 
-    Route::group(['prefix' => 'admin'], function () {
-        Voyager::routes();
-    });
 });
 
 Route::prefix('ajax')->group (function() {
     Route::get('brand/{id}', 'HomeController@getAjaxProductsByBrand')->name('get.ajax.brand');
     Route::get('product/{id}', 'ProductController@getAjaxRelatedProduct')->name('get.ajax.product');
 } );
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
