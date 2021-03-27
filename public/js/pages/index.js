@@ -13385,7 +13385,7 @@ var INDEX = {
     });
   },
   showModalProduct: function showModalProduct() {
-    $('.animation3d i.fa-search-plus').click(function () {
+    $('.content').on('click', '.animation3d i.fa-search-plus', function () {
       $.ajax({
         url: $(this).data('route'),
         error: function error() {
