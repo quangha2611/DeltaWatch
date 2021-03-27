@@ -174,7 +174,7 @@ html {
 .header_search > ul li:first-child form {
   position: absolute;
   width: 200%;
-  right: 5.25rem;
+  right: 5.8rem;
   bottom: 1.75rem;
   transition: 0.25s;
   opacity: 0;

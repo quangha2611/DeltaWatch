@@ -15,11 +15,11 @@
                         @foreach ($manProducts as $product)
                             <div class="swiper-slide watch-for-man_item">
                             <div class="item_image">
-                                <img src="{{ asset('images/products/product' . $product->po_image  . '.jpg') }}" width="100%" alt="">
+                                <img src="{{ asset('storage/' . $product->po_image) }}" width="100%" alt="">
                                 <div class="item_image_mask">
                                     <div class="animation3d">
                                         <div>
-                                            <i class="fas fa-search-plus"></i>
+                                            <i class="fas fa-search-plus" data-route="{{ route('get.ajax.product', $product->id) }}"></i>
                                         </div>
                                         <div class="js-add-to-cart" data-item="{{ $product->id }}" data-route="{{ route('get.cart.add-to-cart') }}">
                                             <i class="fas fa-shopping-basket iconcart"></i>

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="big-pic">
                     <img class="big-pic-active"
-                         src="{{ asset('images/products/product'. $product->po_image . '.jpg') }}" alt="" width="100%">
+                         src="{{ asset('storage/'. $product->po_image) }}" alt="" width="100%">
                     <img src="{{ asset('images/product_details/detail2.jpg') }}" alt="" width="100%">
                     <img src="{{ asset('images/product_details/detail3.jpg') }}" alt="" width="100%">
                     <img src="{{ asset('images/product_details/detail4.jpg') }}" alt="" width="100%">

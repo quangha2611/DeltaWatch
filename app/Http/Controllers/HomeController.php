@@ -17,7 +17,7 @@ class HomeController extends Controller
         $bestProducts       = Product::where('po_hot', 1)->get();
         $posts              = Post::with("author")->get();
         $appleWatchProducts = Product::where('po_brand', 1)->get();
-        $product            = Product::find(1);
+        $product            = Product::first();
         $relatedProducts    = Product::limit(12)->get();
 
         $viewData = [

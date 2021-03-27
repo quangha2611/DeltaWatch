@@ -2,9 +2,10 @@ import HEADER from "../components/header";
 import BACKTOTOP from "../components/back_to_top";
 
 const PRODUCT = {
-    init () {
+    init() {
         HEADER.init();
         BACKTOTOP.init();
+
         this.showModalProduct();
         this.closeModalProduct();
         this.handleCheckboxSidebarLeft();
@@ -12,7 +13,7 @@ const PRODUCT = {
         this.openAndCloseDropDownMenuMobile();
     },
 
-    showModalProduct() {
+    buildSliderModal() {
         var swiper = new Swiper('.modal_thumbnail', {
             direction: 'vertical',
             slidesPerView: 4,
@@ -23,17 +24,27 @@ const PRODUCT = {
                 prevEl: '.modal_thumbnail_slide-prev',
             },
         })
+    },
 
-        var buttonToShowModalProduct = document.querySelectorAll('.animation3d i.fa-search-plus');
-        for (var i=0; i<buttonToShowModalProduct.length; i++) {
-            buttonToShowModalProduct[i].addEventListener('click', function () {
-
-                document.querySelector('.modal-show-product').classList.add('modal-show-product-active');
-                document.querySelector('.modal-main').addEventListener('click', function () {
-                    event.stopPropagation();
-                })
+    showModalProduct() {
+        $('.animation3d i.fa-search-plus').click(function () {
+            $.ajax({
+                url: $(this).data('route'),
+                error: function () {
+                    console.log('error');
+                },
+                success: function (data) {
+                    let dataMain = $(data).find('.modal-main');
+                    $(".modal-show-product").html(dataMain);
+                    PRODUCT.buildSliderModal();
+                },
+                type: 'GET'
             });
-        }
+            $('.modal-show-product').on('click', '.modal-main', function (event) {
+                event.stopPropagation();
+            });
+            $('.modal-show-product').addClass('modal-show-product-active');
+        });
     },
 
     closeModalProduct() {
@@ -46,8 +57,7 @@ const PRODUCT = {
         });
     },
 
-    handleCheckboxSidebarLeft()
-    {
+    handleCheckboxSidebarLeft() {
         $('.content_main-left input[type="checkbox"]').change(function () {
             $(this).next().toggleClass('fake-checkbox-active');
         });
@@ -57,33 +67,31 @@ const PRODUCT = {
         });
     },
 
-    openAndCloseDropDownMenu()
-    {
+    openAndCloseDropDownMenu() {
         var buttonOpenDropMenus = document.querySelectorAll('.btn-show-drop-menu');
-        var buttonCloseDropMenus   = document.querySelectorAll('.btn-close-drop-menu');
-        var dropMenus             = document.querySelectorAll('ul.drop-menu');
-        var hasDropMenus          = document.querySelectorAll('.has-drop-menu');
-        for (var i=0; i<buttonOpenDropMenus.length; i++) {
+        var buttonCloseDropMenus = document.querySelectorAll('.btn-close-drop-menu');
+        var dropMenus = document.querySelectorAll('ul.drop-menu');
+        var hasDropMenus = document.querySelectorAll('.has-drop-menu');
+        for (var i = 0; i < buttonOpenDropMenus.length; i++) {
             buttonOpenDropMenus[i].index = i;
             buttonCloseDropMenus[i].index = i;
             buttonOpenDropMenus[i].addEventListener('click', function () {
                 this.style.display = "none";
-                buttonCloseDropMenus[this.index].style.display ="block";
+                buttonCloseDropMenus[this.index].style.display = "block";
                 dropMenus[this.index].classList.toggle('drop-menu-active');
                 hasDropMenus[this.index].classList.toggle('has-drop-menu-active');
             });
 
             buttonCloseDropMenus[i].addEventListener('click', function () {
                 this.style.display = "none";
-                buttonOpenDropMenus[this.index].style.display ="block";
+                buttonOpenDropMenus[this.index].style.display = "block";
                 dropMenus[this.index].classList.toggle('drop-menu-active');
                 hasDropMenus[this.index].classList.toggle('has-drop-menu-active');
             });
         }
     },
 
-    openAndCloseDropDownMenuMobile()
-    {
+    openAndCloseDropDownMenuMobile() {
         // Menu filter side bar
         var buttonOpenContentMainLeft = document.querySelector('.open-main-left-mobile');
         buttonOpenContentMainLeft.addEventListener('click', function () {

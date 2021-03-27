@@ -2,13 +2,13 @@
 <div class="modal-show-product">
     <div class="modal-main row">
         <div class="modal_big-pic">
-            <img src="{{ asset('images/products/product' . $product->id . '.jpg') }}" alt="" width="100%">
+            <img src="{{ asset('storage/' . $product->po_image) }}" alt="" width="100%">
         </div>
         <div class="modal_thumbnail swiper-container">
             <div class="swiper-wrapper">
                 @foreach ($relatedProducts as $product)
                     <div class="swiper-slide modal_thumbnail_item">
-                        <img src="{{ asset('images/products/product' . $product->id . '.jpg') }}" alt="" width="100%">
+                        <img src="{{ asset('storage/' . $product->po_image) }}" alt="" width="100%">
                     </div>
                 @endforeach
             </div>
