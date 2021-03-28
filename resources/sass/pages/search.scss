@@ -43,6 +43,10 @@ html {
   }
 }
 
+.product-by-brand .list-product-by-brand .new-product_item .item_image {
+  height: 250px;
+}
+
 @media only screen and (max-width: 576px) {
   .content {
     padding: 0 1.5rem;

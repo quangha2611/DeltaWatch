@@ -1010,9 +1010,7 @@ html {
 }
 .new-product_list .new-product_item .item_image {
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 200px;
   position: relative;
   display: flex;
   justify-content: center;
