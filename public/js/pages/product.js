@@ -13385,7 +13385,7 @@ $(window).on('load', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/quangha/Documents/Work/DeltaWatch/resources/js/pages/product.js */"./resources/js/pages/product.js");
+module.exports = __webpack_require__(/*! /home/tuanh/Documents/Job/DeltaWatch/resources/js/pages/product.js */"./resources/js/pages/product.js");
 
 
 /***/ })

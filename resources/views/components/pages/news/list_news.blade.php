@@ -5,7 +5,7 @@
             <div class="post-big col-xl-4 col-lg-4 col-sm-4 col-4 pl-0">
                 <div class="tag-date">{{ date_format($posts[0]->created_at, "d/m/Y") }}</div>
                 <div class="post-big_img">
-                    <img src="{{ asset('images/posts/post' . $post->id . '.jpg') }}" alt="" width="100%">
+                    <img src="{{ asset('storage/' . $post->image) }}" alt="" width="100%">
                 </div>
             </div>
             <div class="post_info col-xl-8 col-lg-8 col-sm-8 col-8 pl-0">
