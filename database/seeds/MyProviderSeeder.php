@@ -34,6 +34,7 @@ class MyProviderSeeder extends Seeder
         14 => array('prov_name' => 'Công Ty TNHH Phát Triển & Thương Mại Duy Anh', 'prov_address' => ' 200A Phồ  Huế, Quận Hai Bà Trưng, Thành Phố Hà Nội (TPHN)', 'prov_phone' => '(024) 22148336', 'prov_email' => 'donghoduyanh@gmail.com', 'prov_represent' => 'Vũ Xuân Khánh'),
     );
         foreach ($providers as $provider) {
+            $provider['created_at'] = now();
             DB::table('providers')->insert($provider);
         }
     }
