@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use function array_keys;
 use function var_dump;
 
 class CartController extends Controller
