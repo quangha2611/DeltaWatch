@@ -4,7 +4,7 @@
             <div class="post-big col-xl-6 col-lg-6 col-sm-6 pl-0">
                 <div class="tag-date">{{ date_format($posts[0]->created_at, "d/m/Y") }}</div>
                 <div class="post-big_img">
-                    <img src="{{ asset('images/posts/post'. $posts[0]->id .'.jpg') }}" alt="" width="100%">
+                    <img src="{{ asset('storage/'. $posts[0]->image) }}" alt="" width="100%">
                 </div>
                 <div class="post-big_des">
                     <p class="des_author">Người đăng: {{ $posts[0]->author->name }}</p>
@@ -16,7 +16,7 @@
                     <div class="post-big col-xl-5 col-lg-5 col-sm-4 col-4 pl-0 pr-0">
                         <div class="tag-date">{{ date_format($posts[0]->created_at, "d/m/Y") }}</div>
                         <div class="post-big_img">
-                            <img src="{{ asset('images/posts/post'. $posts[1]->id .'.jpg') }}" alt="" width="100%">
+                            <img src="{{ asset('storage/'. $posts[1]->image) }}" alt="" width="100%">
                         </div>
                     </div>
                     <h5 class="col-xl-7 col-lg-7 col-sm-8 col-8 pr-0">{{ $posts[2]->title }}</h5>

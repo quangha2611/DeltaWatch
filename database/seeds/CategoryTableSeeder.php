@@ -50,6 +50,7 @@ class CategoryTableSeeder extends Seeder
             );;
         foreach ($categories as $category) {
             $category['slug'] = Str::slug($category['name']);
+            $category[ 'created_at' ] = now();
             DB::table('categories')->insert($category);
         }
     }
