@@ -53,4 +53,5 @@ Route::prefix('ajax')->group (function() {
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    Route::resource('report', 'ReportController')->names('report');
 });
