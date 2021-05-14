@@ -5,16 +5,20 @@
                 <div class="big-pic">
                     <img class="big-pic-active"
                          src="{{ asset('storage/'. $product->po_image) }}" alt="" width="100%">
-                    <img src="{{ asset('images/product_details/detail2.jpg') }}" alt="" width="100%">
-                    <img src="{{ asset('images/product_details/detail3.jpg') }}" alt="" width="100%">
-                    <img src="{{ asset('images/product_details/detail4.jpg') }}" alt="" width="100%">
+                    @foreach ($relatedProducts as $key => $productRelate)
+                        @if ($key < 3 && $productRelate->id != $product->id)
+                            <img src="{{ asset('storage/'. $productRelate->po_image) }}" alt="" width="100%">
+                        @endif
+                    @endforeach
                 </div>
                 <div class="thumbnail">
                     <img class="thumbnail-active"
-                         src="{{ asset('images/products/product'. $product->po_image . '.jpg') }}" alt="" width="100%">
-                    <img src="{{ asset('images/product_details/detail2.jpg') }}" alt="" width="100%">
-                    <img src="{{ asset('images/product_details/detail3.jpg') }}" alt="" width="100%">
-                    <img src="{{ asset('images/product_details/detail4.jpg') }}" alt="" width="100%">
+                         src="{{ asset('storage/'. $product->po_image) }}" alt="" width="100%">
+                    @foreach ($relatedProducts as $key => $productRelate)
+                        @if ($key < 3 && $productRelate->id != $product->id)
+                            <img src="{{ asset('storage/'. $productRelate->po_image) }}" alt="" width="100%">
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -24,42 +28,9 @@
                 <p class="price-product">@php echo number_format($product->po_price, 0, '', '.') . 'đ'; @endphp</p>
                 <p class="des-product">
                 {{ $product->po_description }}
-                <div class="option-size">
-                    <h4>Kích Thước:</h4>
-                    <input type="radio" name="size" id="size42mm" checked>
-                    <label for="size42mm">42mm</label>
-                    <input type="radio" name="size" id="size44mm">
-                    <label for="size44mm">44mm</label>
-                </div>
-                <div class="option-color">
-                    <h4>Màu sắc:</h4>
-                    <input type="radio" name="size" id="colorBlack">
-                    <label for="colorBlack" style="background-color: black;">
-                        <div>
-                            Đen
-                        </div>
-                    </label>
-                    <input type="radio" name="size" id="colorWhite">
-                    <label for="colorWhite" style="background-color: #999;">
-                        <div>
-                            Bạc
-                        </div>
-                    </label>
-                </div>
                 <div class="option-quantity">
-                    <h4>Số Lượng</h4>
-                    <div class="quantity">
-                        <button type="button" onclick="if (document.getElementById('quantity').value > 1 ) {
-                                                document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) - 1 }">
-                            <i class="fas fa-minus-circle"></i>
-                        </button>
-                        <input type="number" name="quantity" id="quantity" value="1">
-                        <button type="button" onclick="if (document.getElementById('quantity').value < 100 ) {
-                                                document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) + 1 }">
-                            <i class="fas fa-plus-circle"></i></button>
-                    </div>
                     <div>
-                        <button class="add-to-cart">
+                        <button class="js-add-to-cart add-to-cart" style="margin-left: 0" data-item="{{ $product->id }}" data-route="{{ route('get.cart.add-to-cart') }}" type="button">
                             <i class="fas fa-shopping-basket"></i> Thêm vào giỏ hàng
                         </button>
                         <button class="buy-now">

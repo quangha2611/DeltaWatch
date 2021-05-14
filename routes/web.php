@@ -35,11 +35,16 @@ Route::prefix('products')->group(function () {
     Route::get('login', 'LoginController@index')->name('get.login.index');
     Route::post('login', 'LoginController@login')->name('post.login.login');
 
+    Route::get('logout', 'LogoutController@index')->name('get.logout.index');
+
     Route::get('signup', 'SignUpController@index')->name('get.sign-up.index');
     Route::post('signup', 'SignUpController@signup')->name('post.sign-up.signup');
 
     Route::get('cart', 'CartController@index')->middleware('check_customer')->name('get.cart.index');
     Route::get('add-to-cart', 'CartController@addToCart')->name('get.cart.add-to-cart');
+    Route::get('reduce-quantity', 'CartController@reduceQuantity')->name('get.cart.reduce-quantity');
+    Route::get('delete-from-cart/{id}', 'CartController@deleteFromCart')->name('get.cart.delete-from-cart');
+    Route::get('order', 'CartController@order')->name('get.cart.order');
 
     Route::get('search', 'SearchController@index')->name('get.search.index');
 
@@ -53,5 +58,5 @@ Route::prefix('ajax')->group (function() {
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
-    Route::resource('report', 'ReportController')->names('report');
+    Route::get('report', 'ReportController@index')->name('get.admin.report');
 });

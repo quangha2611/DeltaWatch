@@ -27,7 +27,7 @@ class ProductController extends Controller
         return view('pages.product')->with($viewData);
     }
 
-    public function show ($id)
+    public function show($id)
     {
         $product         = Product::findOrFail($id);
         $posts           = Post::limit(4)->get();

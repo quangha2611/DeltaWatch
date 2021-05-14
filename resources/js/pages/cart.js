@@ -12,6 +12,16 @@ const CART = {
     updateCart()
     {
         $('.item_quantity').on('click', '.more-product', function () {
+            let id = $(this).data('item');
+            let route = $(this).data('route');
+            $.ajax({
+                url: route,
+                type: 'GET',
+                dataType: 'html',
+                data: {
+                    id: id,
+                }
+            })
             var price = $(this).parents('.cart_item').data('price');
             var old_quantity = $(this).parents('.quantity').find('.product-quantity').val();
             $(this).parents('.quantity').find('.product-quantity').val( parseInt(old_quantity) + 1);
@@ -21,6 +31,16 @@ const CART = {
         });
 
         $('.item_quantity').on('click', '.reduce-product', function () {
+            let id = $(this).data('item');
+            let route = $(this).data('route');
+            $.ajax({
+                url: route,
+                type: 'GET',
+                dataType: 'html',
+                data: {
+                    id: id,
+                }
+            })
             var price = $(this).parents('.cart_item').data('price');
             var old_quantity = $(this).parents('.quantity').find('.product-quantity').val();
             if (old_quantity == 1) {
@@ -49,6 +69,12 @@ const CART = {
         $('.cart_item').on('click', '.item_cancel', function () {
             $(this).parents('.cart_item').remove();
             CART.updateTotalMoneyCart();
+            let route = $(this).data('route');
+            $.ajax({
+                url: route,
+                type: 'GET',
+                dataType: 'html',
+            });
         })
     },
 

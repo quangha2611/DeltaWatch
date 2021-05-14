@@ -20,12 +20,12 @@
                                     <div class="col-xl-3 col-lg-3">
                                         <ul class="pl-0">
                                             <h3>
-                                                <a href="" title="{{ $category->name }}">{{ $category->name }}</a>
+                                                <a href="{{ route('get.product.index') }}" title="{{ $category->name }}">{{ $category->name }}</a>
                                             </h3>
                                             @foreach($category->subCats as $subCat)
                                                 <li>
                                                     <i class="fa fa-angle-right"></i>
-                                                    <a href="#" title="{{ $subCat->name }}">{{ $subCat->name }}</a>
+                                                    <a href="{{ route('get.product.index') }}" title="{{ $subCat->name }}">{{ $subCat->name }}</a>
                                                 </li>
                                             @endforeach
                                         </ul>

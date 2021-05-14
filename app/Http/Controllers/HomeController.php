@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Category;
 use App\Post;
 use App\Product;
+use function json_encode;
 
 class HomeController extends Controller
 {

@@ -11,7 +11,7 @@
                             <li><a href="{{ route('get.login.index') }}">Đăng nhập</a></li>
                             <li><a href="{{ route('get.sign-up.index') }}">Đăng ký</a></li>
                         @else
-                            <li><a href="">Đăng xuất</a></li>
+                            <li><a href="{{ route('get.logout.index') }}">Đăng xuất</a></li>
                         @endif
                     </ul>
                 </div>

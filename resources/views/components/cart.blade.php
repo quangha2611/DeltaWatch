@@ -1,20 +1,15 @@
 <span><i class="fas fa-shopping-basket"></i> Giỏ hàng ({{ count($cartItems ?? []) }})</span>
 <ul class="cart header_sub-menu">
-    @foreach ($cartItems ?? [] as $item)
+    @foreach ($cartItems ?? [] as $key => $item)
         <li class="cart_item">
             <div class="cart_item_image">
-                <img src="{{ asset('images/products/product' . $item['image'] .'.jpg') }}" alt="" width="100%">
+                <img src="{{ asset('storage/' . $item['image']) }}" alt="" width="100%">
             </div>
             <div class="cart_item_info" data-price="{{ $item['price'] }}">
                 <a href="#" class="name">{{ $item['name'] }}</a>
                 <p class="price">{{ number_format($item['price']) }}</p>
-                <div class="quantity">
-                    <button type="button" class="increase_quantity">+</button>
-                    <input type="number" value="{{ $item['quantity'] }}" class="count_quantity">
-                    <button type="button" class="reduce_quantity">-</button>
-                </div>
             </div>
-            <i class="fas fa-times"></i>
+            <i class="fas fa-times js-delete-from-cart" data-route="{{ route('get.cart.delete-from-cart', $key) }}" style="cursor: pointer"></i>
         </li>
     @endforeach
     <a href="{{ route('get.cart.index') }}">

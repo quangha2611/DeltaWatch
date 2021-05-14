@@ -149,26 +149,22 @@ const INDEX = {
 
     getAjaxBrands() {
         var brands = document.querySelectorAll('.brand_item');
-        brands.forEach(function (brand) {
-            brand.addEventListener('click', function () {
-                var route = $(this).data('route');
-                brands.forEach(function (brand) {
-                    $(brand).removeClass('active');
-                });
-                $(brand).toggleClass('active');
-                $.ajax({
-                    url: $(this).data('route'),
-                    error: function () {
-                        console.log('error');
-                    },
-                    success: function (data) {
-                        $(".list-product-by-brand > div").remove();
-                        $(".list-product-by-brand").html(data);
-                    },
-                    type: 'GET'
-                });
-            })
-        });
+        $('.brand_item').click(function () {
+            var route = $(this).data('route');
+            $('.brand_item.active').removeClass('active');
+            $(this).addClass('active');
+            $.ajax({
+                url: $(this).data('route'),
+                error: function () {
+                    console.log('error');
+                },
+                success: function (data) {
+                    $(".list-product-by-brand > div").remove();
+                    $(".list-product-by-brand").html(data);
+                },
+                type: 'GET'
+            });
+        })
     },
 
 }
